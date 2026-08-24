@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
 import { serverEnv } from "@/lib/env";
@@ -7,16 +7,10 @@ import { seo } from "@/lib/project-data";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
-const display = Instrument_Serif({
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument",
-  display: "swap",
-});
-
-const sans = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -68,7 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-CA"
-      className={`${display.variable} ${sans.variable} h-full scroll-smooth antialiased`}
+      className={`${poppins.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-paper font-sans text-ink">
         <a

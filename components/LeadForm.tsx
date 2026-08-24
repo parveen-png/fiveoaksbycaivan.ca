@@ -194,7 +194,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
         id={idPrefix === "hero" ? "register" : `${idPrefix}-register`}
         className="card relative overflow-hidden p-6 md:p-8"
       >
-        <div className="absolute inset-x-0 top-0 h-1 bg-forest" />
+        <div className="absolute inset-x-0 top-0 h-1.5 bg-clay" />
         <div
           ref={successRef}
           tabIndex={-1}
@@ -204,7 +204,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-clay">
             Request received
           </p>
-          <h2 className="mt-3 font-display text-2xl text-ink">
+          <h2 className="mt-3 font-display text-2xl font-bold text-ink">
             You&apos;re on the Five Oaks update list
           </h2>
           <p className="mt-4 text-base leading-7 text-ink">{userMessages.success}</p>
@@ -218,24 +218,11 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
       id={idPrefix === "hero" ? "register" : `${idPrefix}-register`}
       className="card relative overflow-hidden p-6 md:p-8"
     >
-      <div className="absolute inset-x-0 top-0 h-1 bg-forest" />
-      <h2 id={headingId} className="font-display text-2xl tracking-tight text-ink">
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-clay" />
+      <h2 id={headingId} className="font-display text-2xl font-bold tracking-tight text-ink">
         Get Five Oaks Project Updates
       </h2>
-      <p className="mt-3 text-sm leading-6 text-ink">{copy.formSupport}</p>
-      <ul className="mt-4 space-y-1.5 text-sm leading-6 text-ink-muted">
-        {copy.formTrust.map((item) => (
-          <li key={item} className="flex gap-2">
-            <span aria-hidden="true" className="mt-0.5 text-forest">
-              ✓
-            </span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-4 border-l-2 border-clay/50 pl-3 text-sm leading-6 text-ink-muted">
-        {copy.independentDisclosure}
-      </p>
+      <p className="mt-3 text-sm leading-6 text-ink-muted">{copy.formSupport}</p>
 
       {showSummary ? (
         <div

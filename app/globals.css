@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #eef3f5;
-  --foreground: #12202c;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-paper: #eef3f5;
+  --color-paper: #f8fafc;
   --color-paper-elevated: #ffffff;
-  --color-paper-muted: #e1eaee;
-  --color-ink: #12202c;
-  --color-ink-muted: #5b6b76;
-  --color-forest: #16324f;
-  --color-forest-hover: #0f243a;
-  --color-forest-soft: #d7e8ee;
-  --color-clay: #2f7a8a;
-  --color-stone: #c9d6dc;
-  --color-error: #8b2e2e;
-  --color-error-soft: #f6e8e8;
-  --color-success: #2c5a3e;
-  --font-sans: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument), "Instrument Serif", Georgia, serif;
-  --shadow-card: 0 28px 64px -32px rgb(18 32 44 / 0.42);
+  --color-paper-muted: #f1f5f9;
+  --color-ink: #0f172a;
+  --color-ink-muted: #475569;
+  --color-forest: #0f172a;
+  --color-forest-hover: #020617;
+  --color-forest-soft: #e2e8f0;
+  --color-clay: #0ea5e9;
+  --color-clay-hover: #0284c7;
+  --color-stone: #cbd5e1;
+  --color-error: #b91c1c;
+  --color-error-soft: #fef2f2;
+  --color-success: #15803d;
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-display: var(--font-poppins), system-ui, sans-serif;
+  --shadow-card: 0 20px 40px -15px rgb(15 23 42 / 0.25);
 }
 
 html,
@@ -42,30 +43,34 @@ body {
 
 .btn-primary {
   display: inline-flex;
-  min-height: 3rem;
+  min-height: 3.5rem;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
-  background: var(--color-forest);
-  padding: 0.75rem 1.5rem;
-  font-size: 0.9375rem;
+  border-radius: 0.5rem;
+  background: var(--color-clay);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
   color: #ffffff;
-  transition: background-color 150ms ease;
+  transition: all 150ms ease;
+  box-shadow: 0 4px 14px -4px var(--color-clay);
 }
 
 .btn-primary:hover {
-  background: var(--color-forest-hover);
+  background: var(--color-clay-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px -4px var(--color-clay);
 }
 
 .btn-primary.btn-inverse {
   background: #ffffff;
   color: var(--color-forest);
+  box-shadow: 0 4px 14px -4px rgba(255,255,255,0.4);
 }
 
 .btn-primary.btn-inverse:hover {
   background: var(--color-forest-soft);
+  box-shadow: 0 6px 20px -4px rgba(255,255,255,0.5);
 }
 
 .card {
