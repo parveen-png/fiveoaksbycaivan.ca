@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f3efe7;
-  --foreground: #161410;
+  --background: #eef3f5;
+  --foreground: #12202c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-paper: #f3efe7;
-  --color-paper-elevated: #fffcf7;
-  --color-paper-muted: #e8e1d4;
-  --color-ink: #161410;
-  --color-ink-muted: #5a544a;
-  --color-forest: #24382b;
-  --color-forest-hover: #1b2b21;
-  --color-forest-soft: #dce6de;
-  --color-clay: #8a5a3c;
-  --color-stone: #d2c8b6;
+  --color-paper: #eef3f5;
+  --color-paper-elevated: #ffffff;
+  --color-paper-muted: #e1eaee;
+  --color-ink: #12202c;
+  --color-ink-muted: #5b6b76;
+  --color-forest: #16324f;
+  --color-forest-hover: #0f243a;
+  --color-forest-soft: #d7e8ee;
+  --color-clay: #2f7a8a;
+  --color-stone: #c9d6dc;
   --color-error: #8b2e2e;
   --color-error-soft: #f6e8e8;
   --color-success: #2c5a3e;
-  --font-sans: var(--font-source-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --shadow-card: 0 24px 60px -28px rgb(22 20 16 / 0.35);
+  --font-sans: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), "Instrument Serif", Georgia, serif;
+  --shadow-card: 0 28px 64px -32px rgb(18 32 44 / 0.42);
 }
 
 html,
@@ -45,13 +45,13 @@ body {
   min-height: 3rem;
   align-items: center;
   justify-content: center;
-  border-radius: 0.2rem;
+  border-radius: 999px;
   background: var(--color-forest);
   padding: 0.75rem 1.5rem;
   font-size: 0.9375rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--color-paper-elevated);
+  letter-spacing: 0.02em;
+  color: #ffffff;
   transition: background-color 150ms ease;
 }
 
@@ -59,20 +59,24 @@ body {
   background: var(--color-forest-hover);
 }
 
-.btn-primary:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
+.btn-primary.btn-inverse {
+  background: #ffffff;
+  color: var(--color-forest);
+}
+
+.btn-primary.btn-inverse:hover {
+  background: var(--color-forest-soft);
 }
 
 .card {
   border: 1px solid var(--color-stone);
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   background: var(--color-paper-elevated);
   box-shadow: var(--shadow-card);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-forest);
+  outline: 2px solid var(--color-clay);
   outline-offset: 3px;
 }
 

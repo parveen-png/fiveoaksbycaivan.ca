@@ -8,7 +8,7 @@ export function HeroCta() {
   return (
     <CtaLink
       href="/#register"
-      className="w-full sm:w-auto"
+      className="btn-inverse w-full sm:w-auto"
       onClick={() => track("hero_cta_click", { placement: "hero-mobile" })}
     >
       {project.primaryCta}

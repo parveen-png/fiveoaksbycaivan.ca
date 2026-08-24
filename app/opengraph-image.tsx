@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#F6F3EE",
-          color: "#1A1814",
+          backgroundColor: "#16324F",
+          color: "#FFFFFF",
           padding: "72px",
           fontFamily: "Georgia, Times New Roman, serif",
         }}
@@ -24,16 +24,16 @@ export default function OpenGraphImage() {
           style={{
             display: "flex",
             fontSize: 22,
-            letterSpacing: "0.18em",
+            letterSpacing: "0.22em",
             textTransform: "uppercase",
-            color: "#8A5A3C",
+            color: "#7EC4D1",
           }}
         >
           Coming Soon • Oakville, Ontario
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 70, lineHeight: 1.05 }}>Five Oaks</div>
-          <div style={{ marginTop: 12, fontSize: 32 }}>
+          <div style={{ fontSize: 72, lineHeight: 1.05 }}>Five Oaks</div>
+          <div style={{ marginTop: 12, fontSize: 32, color: "#D7E8EE" }}>
             Caivan townhomes and detached homes
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function OpenGraphImage() {
           style={{
             display: "flex",
             fontSize: 24,
-            color: "#5C574E",
+            color: "#C9D6DC",
             maxWidth: 820,
           }}
         >

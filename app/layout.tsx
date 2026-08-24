@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
 import { serverEnv } from "@/lib/env";
@@ -7,15 +7,16 @@ import { seo } from "@/lib/project-data";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
-const display = Fraunces({
+const display = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  weight: "400",
+  variable: "--font-instrument",
   display: "swap",
 });
 
-const sans = Source_Sans_3({
+const sans = Manrope({
   subsets: ["latin"],
-  variable: "--font-source-sans",
+  variable: "--font-manrope",
   display: "swap",
 });
 

@@ -384,7 +384,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
               return (
                 <label
                   key={option.value}
-                  className={`flex min-h-12 cursor-pointer items-center justify-center rounded-sm border px-2 py-2 text-center text-sm font-medium transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-forest ${
+                  className={`flex min-h-12 cursor-pointer items-center justify-center rounded-xl border px-2 py-2 text-center text-sm font-medium transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-clay ${
                     selected
                       ? "border-forest bg-forest-soft text-ink"
                       : "border-stone bg-paper text-ink-muted hover:border-forest/40"
@@ -524,7 +524,7 @@ function Field({
 }
 
 function inputClass(invalid: boolean) {
-  return `min-h-12 w-full rounded-sm border bg-paper-elevated px-3 text-base text-ink outline-none transition-colors focus-visible:ring-2 focus-visible:ring-forest ${
+  return `min-h-12 w-full rounded-xl border bg-paper-elevated px-3 text-base text-ink outline-none transition-colors focus-visible:ring-2 focus-visible:ring-clay ${
     invalid ? "border-error" : "border-stone"
   }`;
 }

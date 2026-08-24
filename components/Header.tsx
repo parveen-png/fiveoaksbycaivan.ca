@@ -10,12 +10,12 @@ const links = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-stone bg-paper/95 shadow-[0_1px_0_rgb(210_200_182_/_0.8)] backdrop-blur-md">
-      <div className="h-0.5 w-full bg-forest" />
+    <header className="sticky top-0 z-40 border-b border-stone bg-paper-elevated/90 backdrop-blur-md">
+      <div className="h-0.5 w-full bg-clay" />
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3 sm:px-6 lg:px-8">
         <Link
           href="/#top"
-          className="shrink-0 font-display text-base font-medium tracking-tight text-ink sm:text-lg"
+          className="shrink-0 text-sm font-semibold tracking-[0.18em] uppercase text-forest sm:text-base"
         >
           {project.name}
           <span className="text-ink-muted"> • Oakville</span>

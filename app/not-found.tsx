@@ -17,7 +17,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-sm bg-forest px-6 text-sm font-semibold text-paper hover:bg-forest-hover"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-forest px-6 text-sm font-semibold text-white hover:bg-forest-hover"
           >
             Return to Five Oaks information
           </Link>

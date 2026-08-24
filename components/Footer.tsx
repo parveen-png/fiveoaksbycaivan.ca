@@ -16,7 +16,7 @@ export function Footer() {
     : `mailto:${siteConfig.publisherEmail}`;
 
   return (
-    <footer className="border-t border-stone bg-[#ebe4d8]">
+    <footer className="border-t border-stone bg-paper-muted">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           <div>

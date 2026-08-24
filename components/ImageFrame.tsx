@@ -19,7 +19,7 @@ export function ImageFrame({
   caption?: string;
 }) {
   return (
-    <figure className="overflow-hidden rounded-sm border border-stone bg-paper-muted">
+    <figure className="overflow-hidden rounded-2xl border border-stone bg-paper-muted">
       <div className="relative aspect-video">
         <Image
           src={src}

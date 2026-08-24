@@ -55,7 +55,7 @@ export function Eyebrow({
 
 export function StatusBadge({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-sm border border-stone bg-paper px-2 py-0.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+    <span className="inline-flex items-center rounded-full border border-stone bg-paper px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-ink-muted">
       {children}
     </span>
   );
