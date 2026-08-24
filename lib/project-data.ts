@@ -440,10 +440,16 @@ export const buyerTimingOptions = [
 
 export const images = {
   hero: {
-    src: "/images/oakville-tree-canopy.jpg",
-    alt: "Tree-lined residential street in Oakville-area southern Ontario. Neighbourhood illustration only; not a Five Oaks rendering.",
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/campaign-media/uploads/five%20oaks%20hero%20image.jpg",
+    alt: "Five Oaks by Caivan in Oakville",
     width: 1536,
     height: 1024,
+  },
+  logo: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/campaign-media/uploads/Caivan-FiveOaks-Logo-Teal-RGB@2x.png",
+    alt: "Five Oaks by Caivan Logo",
+    width: 400,
+    height: 100,
   },
   lakeshore: {
     src: "/images/oakville-lakeshore.jpg",

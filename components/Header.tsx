@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { copy, project } from "@/lib/project-data";
+import Image from "next/image";
+import { copy, project, images } from "@/lib/project-data";
 
 const links = [
   { href: "/#overview", label: "Overview" },
@@ -10,21 +11,28 @@ const links = [
 
 export function Header() {
   return (
-    <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-forest/80 backdrop-blur-md">
+    <header className="absolute inset-x-0 top-0 z-50 border-b border-stone bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-4 sm:px-6 lg:px-8">
         <Link
           href="/#top"
-          className="shrink-0 text-lg font-bold tracking-wide text-white"
+          className="shrink-0"
         >
-          {project.name}
-          <span className="text-white/70 font-normal"> • Oakville</span>
+          <Image 
+            src={images.logo.src} 
+            alt={images.logo.alt} 
+            width={160} 
+            height={40} 
+            className="h-8 w-auto sm:h-10"
+            priority
+          />
+          <span className="sr-only">{project.name}</span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
             >
               {link.label}
             </Link>
@@ -38,7 +46,7 @@ export function Header() {
             {project.primaryCta}
           </Link>
           <details className="relative lg:hidden">
-            <summary className="flex min-h-10 min-w-10 cursor-pointer list-none items-center justify-center rounded-md border border-white/20 bg-white/10 text-white [&::-webkit-details-marker]:hidden">
+            <summary className="flex min-h-10 min-w-10 cursor-pointer list-none items-center justify-center rounded-md border border-stone bg-paper text-ink [&::-webkit-details-marker]:hidden">
               <span className="sr-only">Open menu</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </summary>
