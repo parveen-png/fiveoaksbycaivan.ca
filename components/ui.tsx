@@ -1,0 +1,53 @@
+import type { ReactNode } from "react";
+
+export function Container({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+export function Section({
+  id,
+  children,
+  className = "",
+  ariaLabelledby,
+}: {
+  id?: string;
+  children: ReactNode;
+  className?: string;
+  ariaLabelledby?: string;
+}) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={ariaLabelledby}
+      className={`scroll-mt-24 py-16 md:py-24 ${className}`}
+    >
+      {children}
+    </section>
+  );
+}
+
+export function Eyebrow({ children }: { children: ReactNode }) {
+  return (
+    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
+      {children}
+    </p>
+  );
+}
+
+export function StatusBadge({ children }: { children: ReactNode }) {
+  return (
+    <span className="inline-flex items-center rounded-sm border border-stone bg-paper px-2 py-0.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+      {children}
+    </span>
+  );
+}

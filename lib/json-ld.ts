@@ -1,0 +1,73 @@
+import { faqs, images, project, seo } from "@/lib/project-data";
+import { identityIsPlaceholder, siteConfig } from "@/lib/site-config";
+
+export function buildJsonLd() {
+  const pageUrl = siteConfig.siteUrl;
+  const imageUrl = `${pageUrl}${images.hero.src}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${pageUrl}/#website`,
+        url: pageUrl,
+        name: "Five Oaks Oakville project information",
+        description:
+          "Independent informational website about Five Oaks by Caivan Communities in Oakville, Ontario.",
+        publisher: { "@id": `${pageUrl}/#publisher` },
+        inLanguage: "en-CA",
+      },
+      {
+        "@type": "Organization",
+        "@id": `${pageUrl}/#publisher`,
+        name: siteConfig.publisherLegalName,
+        url: pageUrl,
+        ...(!identityIsPlaceholder(siteConfig.publisherEmail)
+          ? { email: siteConfig.publisherEmail }
+          : {}),
+        ...(!identityIsPlaceholder(siteConfig.publisherPhone)
+          ? { telephone: siteConfig.publisherPhone }
+          : {}),
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: seo.title,
+        description: seo.description,
+        isPartOf: { "@id": `${pageUrl}/#website` },
+        about: {
+          "@type": "Thing",
+          name: project.name,
+          description: `${project.name} is a coming-soon new-home community by ${project.developer} in ${project.municipality}, planned to include ${project.homeTypes.toLowerCase()}.`,
+        },
+        primaryImageOfPage: { "@id": `${pageUrl}/#primaryimage` },
+        inLanguage: "en-CA",
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${pageUrl}/#primaryimage`,
+        url: imageUrl,
+        contentUrl: imageUrl,
+        caption:
+          "Neighbourhood imagery for illustration only. This photograph does not depict the Five Oaks project.",
+        width: images.hero.width,
+        height: images.hero.height,
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        url: `${pageUrl}/#faqs`,
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
+}

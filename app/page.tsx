@@ -1,0 +1,37 @@
+import { BuyerChecklist } from "@/components/BuyerChecklist";
+import { DeveloperSection } from "@/components/DeveloperSection";
+import { FaqSection } from "@/components/FaqSection";
+import { FinalCta } from "@/components/FinalCta";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { HomeCollection } from "@/components/HomeCollection";
+import { LocationSection } from "@/components/LocationSection";
+import { PricingStatus } from "@/components/PricingStatus";
+import { ProjectDefinition } from "@/components/ProjectDefinition";
+import { ProjectFacts } from "@/components/ProjectFacts";
+import { RegistrationBenefits } from "@/components/RegistrationBenefits";
+import { SectionEngagement } from "@/components/SectionEngagement";
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <main id="main">
+        <Hero />
+        <ProjectDefinition />
+        <ProjectFacts />
+        <RegistrationBenefits />
+        <HomeCollection />
+        <PricingStatus />
+        <LocationSection />
+        <DeveloperSection />
+        <BuyerChecklist />
+        <FaqSection />
+        <FinalCta />
+      </main>
+      <Footer />
+      <SectionEngagement />
+    </>
+  );
+}
