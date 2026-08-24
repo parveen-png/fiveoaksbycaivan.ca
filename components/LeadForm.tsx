@@ -8,7 +8,6 @@ import {
 } from "react";
 import { track, trackGenerateLead } from "@/components/analytics-client";
 import {
-  buyerTimingOptions,
   CONSENT_TEXT_VERSION,
   copy,
   FORM_VERSION,
@@ -17,7 +16,7 @@ import {
   project,
   userMessages,
 } from "@/lib/project-data";
-import { consentWording, siteConfig } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 import { flattenLeadErrors, leadInputSchema } from "@/lib/validation";
 
 interface LeadFormProps {
@@ -183,8 +182,6 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
     }
   }
 
-  const privacyHref = siteConfig.privacyPolicyUrl;
-  const consentLabel = consentWording(siteConfig.publisherLegalName);
   const errorList = Object.entries(errors);
   const showSummary = errorList.length > 0 && status !== "submitting";
 

@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
   return (
     <>
       <Header />
-      <main id="main" className="py-16">
+      <main id="main" className="pt-28 pb-16">
         <Container className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
             Requires legal and brokerage review before launch
@@ -27,11 +27,10 @@ export default function DisclaimerPage() {
           <div className="mt-8 space-y-6 text-base leading-7 text-ink">
             <p>{copy.legalFooterDisclosure}</p>
             <p>
-              This website is published by {siteConfig.publisherLegalName}. It is
-              not the official website of {project.developer} or {project.name}.
-              The publisher does not claim to represent Caivan, to be Caivan&apos;s
-              exclusive sales representative, or to offer homes for sale through
-              this page.
+              This is an independent informational website. It is not the official
+              website of {project.developer} or {project.name}. This site does
+              not claim to represent Caivan, to be Caivan&apos;s exclusive sales
+              representative, or to offer homes for sale through this page.
             </p>
             <p>
               Information on this page is based on official materials reviewed on

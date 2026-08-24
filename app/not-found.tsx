@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main id="main" className="py-24">
+      <main id="main" className="pt-32 pb-24">
         <Container className="max-w-2xl">
           <h1 className="font-display text-4xl tracking-tight text-ink">
             Page not found

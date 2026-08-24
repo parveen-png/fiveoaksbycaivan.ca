@@ -80,7 +80,7 @@ async function sendProviderEmail(options: {
   if (!serverEnv.emailProviderApiKey || !serverEnv.fromEmail) {
     throw new Error("Email provider is not configured");
   }
-  const fromName = serverEnv.fromName || siteConfig.publisherLegalName;
+  const fromName = serverEnv.fromName || "Five Oaks Updates";
   const response = await fetch(serverEnv.emailProviderEndpoint, {
     method: "POST",
     headers: {

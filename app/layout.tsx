@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   description: seo.description,
   keywords: [...seo.keywords],
   applicationName: "Five Oaks Oakville project information",
-  authors: [{ name: siteConfig.publisherLegalName }],
-  creator: siteConfig.publisherLegalName,
-  publisher: siteConfig.publisherLegalName,
   category: "real estate",
   alternates: {
     canonical: "/",

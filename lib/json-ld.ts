@@ -3,7 +3,9 @@ import { identityIsPlaceholder, siteConfig } from "@/lib/site-config";
 
 export function buildJsonLd() {
   const pageUrl = siteConfig.siteUrl;
-  const imageUrl = `${pageUrl}${images.hero.src}`;
+  const imageUrl = images.hero.src.startsWith("http")
+    ? images.hero.src
+    : `${pageUrl}${images.hero.src}`;
 
   return {
     "@context": "https://schema.org",
@@ -25,7 +27,7 @@ export function buildJsonLd() {
       {
         "@type": "Organization",
         "@id": `${pageUrl}/#publisher`,
-        name: siteConfig.publisherLegalName,
+        name: "Five Oaks Oakville project information",
         url: pageUrl,
         ...(!identityIsPlaceholder(siteConfig.publisherEmail)
           ? { email: siteConfig.publisherEmail }

@@ -7,7 +7,6 @@ export function acknowledgementEmail(lead: CapturedLead): {
   text: string;
   html: string;
 } {
-  const publisher = siteConfig.publisherLegalName;
   const privacyUrl = siteConfig.privacyPolicyUrl.startsWith("http")
     ? siteConfig.privacyPolicyUrl
     : `${siteConfig.siteUrl}${siteConfig.privacyPolicyPath}`;
@@ -15,7 +14,7 @@ export function acknowledgementEmail(lead: CapturedLead): {
   const text = [
     `Hello ${lead.firstName},`,
     "",
-    `Thank you. ${publisher} has received your request for Five Oaks project updates.`,
+    "Thank you. This independent Five Oaks informational website has received your request for project updates.",
     "",
     `Five Oaks by ${project.developer} is a coming-soon community in ${project.municipality}. Official pricing, floor plans, deposit details, incentives, exact location, launch timing and occupancy information remain limited as of the sources reviewed for this website.`,
     "",
@@ -27,17 +26,12 @@ export function acknowledgementEmail(lead: CapturedLead): {
     "",
     `Privacy information: ${privacyUrl}`,
     "",
-    "This message is from the independent publisher of this informational website. It is not from Caivan Communities.",
-    "",
-    `${publisher}`,
-    siteConfig.publisherAddress,
-    siteConfig.publisherEmail,
-    siteConfig.publisherPhone,
+    "This message is from the independent operator of this informational website. It is not from Caivan Communities.",
   ].join("\n");
 
   const html = `
     <p>Hello ${escapeHtml(lead.firstName)},</p>
-    <p>Thank you. <strong>${escapeHtml(publisher)}</strong> has received your request for Five Oaks project updates.</p>
+    <p>Thank you. This independent Five Oaks informational website has received your request for project updates.</p>
     <p>Five Oaks by ${escapeHtml(project.developer)} is a coming-soon community in ${escapeHtml(project.municipality)}. Official pricing, floor plans, deposit details, incentives, exact location, launch timing and occupancy information remain limited as of the sources reviewed for this website.</p>
     <p>We will share verified updates using the contact information you provided, according to your consent and communication preferences. This message confirms receipt of your request only. It does not include prices, floor plans or other project documents.</p>
     <p>${
@@ -46,13 +40,7 @@ export function acknowledgementEmail(lead: CapturedLead): {
         : "You did not opt in to commercial electronic messages. We will use your information to respond to this update request. We will not send ongoing promotional messages unless you later provide consent."
     }</p>
     <p><a href="${escapeHtml(privacyUrl)}">Privacy information</a></p>
-    <p>This message is from the independent publisher of this informational website. It is not from Caivan Communities.</p>
-    <p>
-      ${escapeHtml(publisher)}<br />
-      ${escapeHtml(siteConfig.publisherAddress)}<br />
-      ${escapeHtml(siteConfig.publisherEmail)}<br />
-      ${escapeHtml(siteConfig.publisherPhone)}
-    </p>
+    <p>This message is from the independent operator of this informational website. It is not from Caivan Communities.</p>
   `;
 
   return { subject, text, html };

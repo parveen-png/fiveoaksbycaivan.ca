@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Header />
-      <main id="main" className="py-16">
+      <main id="main" className="pt-28 pb-16">
         <Container className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
             Requires legal review before launch
@@ -24,19 +24,17 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="mt-6 text-base leading-7 text-ink">
-            This template identifies the intended privacy treatment for lead
-            collection on this independent Five Oaks informational website. It is
-            not a substitute for legal advice. Replace placeholder identity
-            fields and have qualified counsel review this policy before the site
-            is launched.
+            This policy describes how personal information is treated when you
+            request Five Oaks project updates on this independent informational
+            website. It is not a substitute for legal advice.
           </p>
           <div className="mt-8 space-y-6 text-base leading-7 text-ink">
             <section>
               <h2 className="font-display text-2xl">Organization responsible</h2>
               <p className="mt-3">
                 Personal information submitted through this website is collected
-                by {siteConfig.publisherLegalName}, {siteConfig.publisherAddress},{" "}
-                {siteConfig.publisherEmail}, {siteConfig.publisherPhone}.
+                by the independent operator of this informational site, not by
+                Caivan Communities.
               </p>
             </section>
             <section>
@@ -62,10 +60,9 @@ export default function PrivacyPage() {
             <section>
               <h2 className="font-display text-2xl">Lead processors</h2>
               <p className="mt-3">
-                Lead information may be sent to {siteConfig.crmOrWebhookProvider}{" "}
-                at {siteConfig.leadDestination} and acknowledgement messages may
-                be sent through {siteConfig.acknowledgementEmailProvider}. Identify
-                those processors in the production environment before launch.
+                Lead information is processed only to respond to your update
+                request. Acknowledgement messages may be sent by email when that
+                delivery channel is configured.
               </p>
             </section>
             <section>
@@ -81,9 +78,9 @@ export default function PrivacyPage() {
               <h2 className="font-display text-2xl">Access and deletion</h2>
               <p className="mt-3">
                 Privacy inquiries, access requests and deletion requests may be
-                sent to {siteConfig.publisherEmail}. The operator should verify
-                identity, locate the relevant records, and respond according to
-                applicable Canadian privacy law.
+                sent through the contact details used to respond to your original
+                request. The operator should verify identity, locate the relevant
+                records, and respond according to applicable Canadian privacy law.
               </p>
             </section>
             <section>
