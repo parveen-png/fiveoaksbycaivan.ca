@@ -192,7 +192,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
     return (
       <div
         id={idPrefix === "hero" ? "register" : `${idPrefix}-register`}
-        className="card relative overflow-hidden p-6 md:p-8"
+        className="card relative overflow-hidden p-5 md:p-6"
       >
         <div className="absolute inset-x-0 top-0 h-1.5 bg-clay" />
         <div
@@ -216,7 +216,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
   return (
     <div
       id={idPrefix === "hero" ? "register" : `${idPrefix}-register`}
-      className="card relative overflow-hidden p-6 md:p-8"
+      className="card relative overflow-hidden p-5 md:p-6"
     >
       <div className="absolute inset-x-0 top-0 h-1.5 bg-clay" />
       <h2 id={headingId} className="font-display text-2xl font-bold tracking-tight text-ink">
@@ -250,7 +250,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
       ) : null}
 
       <form
-        className="mt-6 space-y-5"
+        className="mt-5 space-y-4"
         onSubmit={onSubmit}
         noValidate
         aria-labelledby={headingId}
@@ -268,7 +268,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           />
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2">
           <Field
             id={`${idPrefix}-firstName`}
             label="First name"
@@ -365,13 +365,13 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
             </span>
             <span className="sr-only"> (required)</span>
           </legend>
-          <div className="mt-2 grid gap-2 sm:grid-cols-3">
+          <div className="mt-1.5 grid gap-2 sm:grid-cols-3">
             {productInterestOptions.map((option) => {
               const selected = values.productInterest === option.value;
               return (
                 <label
                   key={option.value}
-                  className={`flex min-h-12 cursor-pointer items-center justify-center rounded-xl border px-2 py-2 text-center text-sm font-medium transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-clay ${
+                  className={`flex min-h-11 cursor-pointer items-center justify-center rounded-xl border px-2 py-2 text-center text-sm font-medium transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-clay ${
                     selected
                       ? "border-forest bg-forest-soft text-ink"
                       : "border-stone bg-paper text-ink-muted hover:border-forest/40"
@@ -420,7 +420,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           </select>
         </Field>
 
-        <div className="rounded-sm border border-stone bg-paper p-4">
+        <div className="rounded-sm border border-stone bg-paper p-3">
           <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-ink">
             <input
               id={`${idPrefix}-marketingConsent`}
@@ -500,7 +500,7 @@ function Field({
           </span>
         ) : null}
       </label>
-      <div className="mt-2">{children}</div>
+      <div className="mt-1.5">{children}</div>
       {error ? (
         <p id={`${id}-error`} className="mt-1 text-sm text-error" role="alert">
           {error}
@@ -511,7 +511,7 @@ function Field({
 }
 
 function inputClass(invalid: boolean) {
-  return `min-h-12 w-full rounded-xl border bg-paper-elevated px-3 text-base text-ink outline-none transition-colors focus-visible:ring-2 focus-visible:ring-clay ${
+  return `min-h-11 w-full rounded-xl border bg-paper-elevated px-3 text-base text-ink outline-none transition-colors focus-visible:ring-2 focus-visible:ring-clay ${
     invalid ? "border-error" : "border-stone"
   }`;
 }

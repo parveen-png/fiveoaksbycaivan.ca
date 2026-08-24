@@ -2,11 +2,11 @@ import Image from "next/image";
 import { HeroCta } from "@/components/HeroCta";
 import { LeadForm } from "@/components/LeadForm";
 import { Container } from "@/components/ui";
-import { copy, heroChips, images } from "@/lib/project-data";
+import { copy, images } from "@/lib/project-data";
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="page-title" className="relative min-h-[90vh] flex items-center pt-24 pb-16 lg:pt-32 lg:pb-24">
+    <section id="top" aria-labelledby="page-title" className="relative flex items-center pt-28 pb-16 lg:pt-36 lg:pb-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -36,30 +36,8 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
             {copy.heroSupport}
           </p>
-          
-          <ul className="mt-8 space-y-4">
-            {copy.formTrust.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-base text-white/95">
-                <span aria-hidden="true" className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-clay text-xs text-white">
-                  ✓
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            {heroChips.map((chip) => (
-              <span
-                key={chip}
-                className="rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm"
-              >
-                {chip}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-10 lg:hidden">
+          <div className="mt-8 lg:hidden">
             <HeroCta />
           </div>
         </div>
