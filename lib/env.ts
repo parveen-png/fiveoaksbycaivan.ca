@@ -23,6 +23,11 @@ export const serverEnv = {
     "GOOGLE_SEARCH_CONSOLE_VERIFICATION",
   ),
   bingWebmasterVerification: optional("BING_WEBMASTER_VERIFICATION"),
+  googleOauthClientId: optional("GOOGLE_OAUTH_CLIENT_ID"),
+  googleOauthClientSecret: optional("GOOGLE_OAUTH_CLIENT_SECRET"),
+  googleOauthRefreshToken: optional("GOOGLE_OAUTH_REFRESH_TOKEN"),
+  googleSheetsSpreadsheetId: optional("GOOGLE_SHEETS_SPREADSHEET_ID"),
+  googleSheetsTabName: optional("GOOGLE_SHEETS_TAB_NAME") ?? "Sheet1",
   rateLimitMax: Number.parseInt(process.env.RATE_LIMIT_MAX ?? "8", 10),
   rateLimitWindowMs: Number.parseInt(
     process.env.RATE_LIMIT_WINDOW_MS ?? "900000",
@@ -33,6 +38,14 @@ export const serverEnv = {
 };
 
 export function hasPrimaryLeadDestination(): boolean {
+  if (
+    serverEnv.googleSheetsSpreadsheetId &&
+    serverEnv.googleOauthClientId &&
+    serverEnv.googleOauthClientSecret &&
+    serverEnv.googleOauthRefreshToken
+  ) {
+    return true;
+  }
   if (serverEnv.leadWebhookUrl) {
     return true;
   }

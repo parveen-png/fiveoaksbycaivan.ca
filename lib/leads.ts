@@ -2,6 +2,7 @@ import { mkdir, appendFile } from "node:fs/promises";
 import path from "node:path";
 import { acknowledgementEmail, internalLeadEmail } from "@/lib/emails";
 import { serverEnv } from "@/lib/env";
+import { appendFiveOaksLeadToGoogleSheet } from "@/lib/google/sheets";
 import { logger } from "@/lib/logger";
 import { rememberIdempotency } from "@/lib/rate-limit";
 import { siteConfig } from "@/lib/site-config";
@@ -12,6 +13,9 @@ import { CONSENT_TEXT_VERSION } from "@/lib/project-data";
 export type { CapturedLead, LeadDeliveryResult } from "@/lib/leads-types";
 
 function destinationLabel(): string {
+  if (serverEnv.googleSheetsSpreadsheetId) {
+    return "google-sheets";
+  }
   if (serverEnv.leadWebhookUrl) {
     return serverEnv.crmOrWebhookProvider || serverEnv.leadDestination || "webhook";
   }
@@ -132,7 +136,27 @@ export async function captureLead(
   const destination = destinationLabel();
 
   try {
-    if (serverEnv.leadWebhookUrl) {
+    if (serverEnv.googleSheetsSpreadsheetId) {
+      const sheetsResult = await appendFiveOaksLeadToGoogleSheet({
+        submittedAt: lead.submittedAt,
+        firstName: lead.firstName,
+        lastName: lead.lastName,
+        email: lead.email,
+        phone: lead.phone,
+        productInterest: lead.productInterest,
+        buyerTiming: lead.buyerTiming,
+        marketingConsent: lead.marketingConsent,
+        landingPage: lead.attribution.landingPageUrl,
+        referrer: lead.attribution.referrer,
+        utmSource: lead.attribution.utmSource,
+        utmMedium: lead.attribution.utmMedium,
+        utmCampaign: lead.attribution.utmCampaign,
+        submissionId: lead.submissionId,
+      });
+      if (!sheetsResult.ok) {
+        throw new Error(sheetsResult.error);
+      }
+    } else if (serverEnv.leadWebhookUrl) {
       await deliverWebhook(lead);
     } else if (serverEnv.internalLeadEmail && serverEnv.emailProviderApiKey) {
       const internal = internalLeadEmail(lead);
@@ -144,6 +168,17 @@ export async function captureLead(
       await deliverLocalFile(lead);
     } else {
       throw new Error("No lead destination configured");
+    }
+
+    if (serverEnv.leadWebhookUrl && serverEnv.googleSheetsSpreadsheetId) {
+      try {
+        await deliverWebhook(lead);
+      } catch (error) {
+        logger.warn("Lead captured in Sheets but webhook follow-up failed", {
+          submissionId,
+          reason: error instanceof Error ? error.message : "unknown",
+        });
+      }
     }
   } catch (error) {
     logger.error("Lead delivery failed", {

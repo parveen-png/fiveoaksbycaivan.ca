@@ -67,7 +67,10 @@ The site stays `noindex` until a public HTTPS canonical URL is configured **and*
 
 ### Lead integration
 
-- `LEAD_WEBHOOK_URL` — primary CRM/webhook destination.
+- `GOOGLE_SHEETS_SPREADSHEET_ID` — Google Sheet that receives form leads.
+- `GOOGLE_OAUTH_CLIENT_ID` / `GOOGLE_OAUTH_CLIENT_SECRET` / `GOOGLE_OAUTH_REFRESH_TOKEN` — server-only OAuth credentials with Sheets access.
+- `GOOGLE_SHEETS_TAB_NAME` — worksheet name, defaults to `Sheet1`.
+- `LEAD_WEBHOOK_URL` — optional extra CRM/webhook destination.
 - `LEAD_WEBHOOK_SECRET` — optional bearer token. Server-only.
 - `CRM_OR_WEBHOOK_PROVIDER` / `LEAD_DESTINATION` — operator labels for the configured destination.
 - `INTERNAL_LEAD_EMAIL` — operator notification recipient.
@@ -78,11 +81,12 @@ The site stays `noindex` until a public HTTPS canonical URL is configured **and*
 
 Lead-delivery order:
 
-1. If `LEAD_WEBHOOK_URL` is set, the server posts the validated lead there.
-2. Otherwise, if internal email and an email API key are set, the server sends the internal new-lead email.
-3. In non-production, if neither destination is configured, leads are appended to `.data/leads.jsonl` so local testing can succeed without faking a CRM response.
-4. Set `ALLOW_LOCAL_LEAD_CAPTURE=true` only for staging or local production-server tests when no CRM is configured. Do not enable it for a public production site.
-5. In production, if no destination is configured and local capture is not explicitly enabled, the form returns a recoverable failure. The application does **not** report success when capture failed.
+1. If Google Sheets OAuth and a spreadsheet ID are set, the server appends the validated lead to that sheet.
+2. If `LEAD_WEBHOOK_URL` is also set, the server posts the lead there after a successful Sheets write.
+3. Otherwise, if internal email and an email API key are set, the server sends the internal new-lead email.
+4. In non-production, if neither destination is configured, leads are appended to `.data/leads.jsonl` so local testing can succeed without faking a CRM response.
+5. Set `ALLOW_LOCAL_LEAD_CAPTURE=true` only for staging or local production-server tests when no CRM is configured. Do not enable it for a public production site.
+6. In production, if no destination is configured and local capture is not explicitly enabled, the form returns a recoverable failure. The application does **not** report success when capture failed.
 
 Acknowledgement email is best-effort after a successful capture. A failed acknowledgement does not undo a confirmed capture, but the operator should monitor email errors.
 
