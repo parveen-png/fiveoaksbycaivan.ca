@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { HomeCollection } from "@/components/HomeCollection";
 import { LocationSection } from "@/components/LocationSection";
+import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { PricingStatus } from "@/components/PricingStatus";
 import { ProjectDefinition } from "@/components/ProjectDefinition";
 import { ProjectFacts } from "@/components/ProjectFacts";
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main id="main">
+      <main id="main" className="pb-24 lg:pb-0">
         <Hero />
         <ProjectDefinition />
         <ProjectFacts />
@@ -31,6 +32,7 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
+      <MobileStickyCta />
       <SectionEngagement />
     </>
   );

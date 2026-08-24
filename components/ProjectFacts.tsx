@@ -1,23 +1,24 @@
-import { Container, Section, StatusBadge } from "@/components/ui";
+import { Container, Eyebrow, Section, StatusBadge } from "@/components/ui";
 import { copy, displayFactValue, facts } from "@/lib/project-data";
 
 export function ProjectFacts() {
   return (
     <Section ariaLabelledby="facts-heading">
       <Container>
+        <Eyebrow>Verified ledger</Eyebrow>
         <h2
           id="facts-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
-          Five Oaks Project Facts
+          Five Oaks Oakville project facts
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
           {copy.factsExplanation}
         </p>
-        <div className="mt-8 overflow-hidden rounded-sm border border-stone">
+        <div className="card mt-8 overflow-hidden shadow-none">
           <table className="w-full text-left">
             <caption className="sr-only">
-              Current Five Oaks project facts as of the information-checked date
+              Current Five Oaks Oakville project facts as of the information-checked date
             </caption>
             <thead className="sr-only md:not-sr-only md:border-b md:border-stone md:bg-paper-muted">
               <tr>

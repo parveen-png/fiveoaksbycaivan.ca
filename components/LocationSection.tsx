@@ -1,15 +1,16 @@
 import { ImageFrame } from "@/components/ImageFrame";
 import { ProjectMapPlaceholder } from "@/components/ProjectMapPlaceholder";
-import { Container, Section } from "@/components/ui";
+import { Container, Eyebrow, Section } from "@/components/ui";
 import { copy, images } from "@/lib/project-data";
 
 export function LocationSection() {
   return (
     <Section id="location" ariaLabelledby="location-heading">
       <Container>
+        <Eyebrow>Oakville context</Eyebrow>
         <h2
           id="location-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
           Five Oaks in Oakville
         </h2>

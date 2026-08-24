@@ -192,19 +192,20 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
     return (
       <div
         id={idPrefix === "hero" ? "register" : `${idPrefix}-register`}
-        className="rounded-sm border border-stone bg-paper-elevated p-6 shadow-sm md:p-8"
+        className="card relative overflow-hidden p-6 md:p-8"
       >
+        <div className="absolute inset-x-0 top-0 h-1 bg-forest" />
         <div
           ref={successRef}
           tabIndex={-1}
           className="outline-none"
           role="status"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-clay">
             Request received
           </p>
           <h2 className="mt-3 font-display text-2xl text-ink">
-            {project.primaryCta}
+            You&apos;re on the Five Oaks update list
           </h2>
           <p className="mt-4 text-base leading-7 text-ink">{userMessages.success}</p>
         </div>
@@ -215,13 +216,26 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
   return (
     <div
       id={idPrefix === "hero" ? "register" : `${idPrefix}-register`}
-      className="rounded-sm border border-stone bg-paper-elevated p-6 shadow-sm md:p-8"
+      className="card relative overflow-hidden p-6 md:p-8"
     >
+      <div className="absolute inset-x-0 top-0 h-1 bg-forest" />
       <h2 id={headingId} className="font-display text-2xl tracking-tight text-ink">
         Get Five Oaks Project Updates
       </h2>
-      <p className="mt-3 text-sm leading-6 text-ink-muted">{copy.formSupport}</p>
-      <p className="mt-3 text-sm leading-6 text-ink">{copy.independentDisclosure}</p>
+      <p className="mt-3 text-sm leading-6 text-ink">{copy.formSupport}</p>
+      <ul className="mt-4 space-y-1.5 text-sm leading-6 text-ink-muted">
+        {copy.formTrust.map((item) => (
+          <li key={item} className="flex gap-2">
+            <span aria-hidden="true" className="mt-0.5 text-forest">
+              ✓
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 border-l-2 border-clay/50 pl-3 text-sm leading-6 text-ink-muted">
+        {copy.independentDisclosure}
+      </p>
 
       {showSummary ? (
         <div
@@ -355,34 +369,52 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           />
         </Field>
 
-        <Field
-          id={`${idPrefix}-productInterest`}
-          label="I'm interested in"
-          required
-          error={fieldError("productInterest")}
-        >
-          <select
-            id={`${idPrefix}-productInterest`}
-            name="productInterest"
-            value={values.productInterest}
-            required
-            onChange={(event) => update("productInterest", event.target.value)}
-            aria-invalid={fieldError("productInterest") ? true : undefined}
-            aria-describedby={
-              fieldError("productInterest")
-                ? `${idPrefix}-productInterest-error`
-                : undefined
-            }
-            className={inputClass(Boolean(fieldError("productInterest")))}
-          >
-            <option value="">Select an option</option>
-            {productInterestOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </Field>
+        <fieldset>
+          <legend className="text-sm font-medium text-ink">
+            I&apos;m interested in
+            <span aria-hidden="true" className="text-error">
+              {" "}
+              *
+            </span>
+            <span className="sr-only"> (required)</span>
+          </legend>
+          <div className="mt-2 grid gap-2 sm:grid-cols-3">
+            {productInterestOptions.map((option) => {
+              const selected = values.productInterest === option.value;
+              return (
+                <label
+                  key={option.value}
+                  className={`flex min-h-12 cursor-pointer items-center justify-center rounded-sm border px-2 py-2 text-center text-sm font-medium transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-forest ${
+                    selected
+                      ? "border-forest bg-forest-soft text-ink"
+                      : "border-stone bg-paper text-ink-muted hover:border-forest/40"
+                  }`}
+                >
+                  <input
+                    id={`${idPrefix}-productInterest-${option.value}`}
+                    className="sr-only"
+                    type="radio"
+                    name={`${idPrefix}-productInterest`}
+                    value={option.value}
+                    checked={selected}
+                    required
+                    onChange={() => update("productInterest", option.value)}
+                  />
+                  {option.label}
+                </label>
+              );
+            })}
+          </div>
+          {fieldError("productInterest") ? (
+            <p
+              id={`${idPrefix}-productInterest-error`}
+              className="mt-1 text-sm text-error"
+              role="alert"
+            >
+              {fieldError("productInterest")}
+            </p>
+          ) : null}
+        </fieldset>
 
         <Field id={`${idPrefix}-buyerTiming`} label="Buyer timing" hint="Optional">
           <select
@@ -435,10 +467,13 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           type="submit"
           disabled={status === "submitting"}
           aria-busy={status === "submitting"}
-          className="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-forest px-6 text-sm font-semibold text-paper transition-colors hover:bg-forest-hover disabled:cursor-not-allowed disabled:opacity-70"
+          className="btn-primary w-full text-base"
         >
           {status === "submitting" ? userMessages.loading : project.primaryCta}
         </button>
+        <p className="text-center text-xs text-ink-muted">
+          Takes less than a minute. No prices are sent until official details exist.
+        </p>
       </form>
     </div>
   );
@@ -489,7 +524,7 @@ function Field({
 }
 
 function inputClass(invalid: boolean) {
-  return `min-h-12 w-full rounded-sm border bg-paper px-3 text-base text-ink outline-none transition-colors focus-visible:ring-2 focus-visible:ring-forest ${
+  return `min-h-12 w-full rounded-sm border bg-paper-elevated px-3 text-base text-ink outline-none transition-colors focus-visible:ring-2 focus-visible:ring-forest ${
     invalid ? "border-error" : "border-stone"
   }`;
 }

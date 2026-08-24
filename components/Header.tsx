@@ -1,40 +1,43 @@
+import Link from "next/link";
 import { copy, project } from "@/lib/project-data";
 
 const links = [
-  { href: "#overview", label: "Overview" },
-  { href: "#homes", label: "Homes" },
-  { href: "#location", label: "Location" },
-  { href: "#faqs", label: "FAQs" },
+  { href: "/#overview", label: "Overview" },
+  { href: "/#homes", label: "Homes" },
+  { href: "/#location", label: "Location" },
+  { href: "/#faqs", label: "FAQs" },
 ];
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-stone bg-paper/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-stone bg-paper/95 shadow-[0_1px_0_rgb(210_200_182_/_0.8)] backdrop-blur-md">
+      <div className="h-0.5 w-full bg-forest" />
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3 sm:px-6 lg:px-8">
-        <a
-          href="#top"
+        <Link
+          href="/#top"
           className="shrink-0 font-display text-base font-medium tracking-tight text-ink sm:text-lg"
         >
-          {project.name} • Oakville
-        </a>
-        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
+          {project.name}
+          <span className="text-ink-muted"> • Oakville</span>
+        </Link>
+        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a
-            href="#register"
-            className="inline-flex min-h-11 items-center justify-center rounded-sm bg-forest px-3.5 text-sm font-semibold text-paper transition-colors hover:bg-forest-hover sm:min-h-12 sm:px-5"
+          <Link
+            href="/#register"
+            className="btn-primary min-h-11 px-3.5 text-sm sm:min-h-12 sm:px-5"
           >
             {project.primaryCta}
-          </a>
+          </Link>
           <details className="relative lg:hidden">
             <summary className="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center rounded-sm border border-stone bg-paper-elevated text-sm font-medium text-ink [&::-webkit-details-marker]:hidden">
               <span className="sr-only">Open menu</span>
@@ -45,12 +48,12 @@ export function Header() {
                 <ul className="flex flex-col gap-1">
                   {links.map((link) => (
                     <li key={link.href}>
-                      <a
+                      <Link
                         href={link.href}
                         className="block min-h-11 rounded-sm px-3 py-2 text-sm font-medium text-ink hover:bg-paper-muted"
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

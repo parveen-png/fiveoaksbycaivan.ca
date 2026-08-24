@@ -1,14 +1,15 @@
 import { ExternalLink } from "@/components/ExternalLink";
-import { Container, Section } from "@/components/ui";
+import { Container, Eyebrow, Section } from "@/components/ui";
 import { copy, project } from "@/lib/project-data";
 
 export function DeveloperSection() {
   return (
     <Section className="bg-paper-muted" ariaLabelledby="developer-heading">
       <Container>
+        <Eyebrow>Builder</Eyebrow>
         <h2
           id="developer-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
           About Caivan Communities
         </h2>

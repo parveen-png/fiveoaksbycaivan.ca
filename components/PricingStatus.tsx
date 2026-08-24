@@ -1,4 +1,4 @@
-import { Container, Section, StatusBadge } from "@/components/ui";
+import { CtaLink, Container, Eyebrow, Section, StatusBadge } from "@/components/ui";
 import {
   copy,
   displayFactValue,
@@ -11,11 +11,12 @@ export function PricingStatus() {
   return (
     <Section className="bg-paper-muted" ariaLabelledby="pricing-heading">
       <Container>
+        <Eyebrow>Pricing status</Eyebrow>
         <h2
           id="pricing-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
-          Five Oaks pricing and release information
+          Five Oaks Oakville pricing and release information
         </h2>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-ink">{copy.pricingLead}</p>
         <dl className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -36,12 +37,9 @@ export function PricingStatus() {
           })}
         </dl>
         <p className="mt-6 max-w-3xl text-base leading-7 text-ink">{copy.pricingCaution}</p>
-        <a
-          href="#register"
-          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-sm bg-forest px-6 text-sm font-semibold text-paper transition-colors hover:bg-forest-hover"
-        >
+        <CtaLink href="/#register" className="mt-8">
           {project.primaryCta}
-        </a>
+        </CtaLink>
       </Container>
     </Section>
   );

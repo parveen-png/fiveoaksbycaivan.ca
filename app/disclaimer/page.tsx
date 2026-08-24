@@ -6,7 +6,7 @@ import { copy, project } from "@/lib/project-data";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Disclaimer | Five Oaks Oakville project information",
+  title: "Disclaimer",
   description:
     "Independent-site disclaimer for the Five Oaks Oakville project-information website.",
   robots: siteConfig.noindex ? { index: false, follow: false } : undefined,

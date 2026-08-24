@@ -21,12 +21,17 @@ const sans = Source_Sans_3({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
-  title: seo.title,
+  title: {
+    default: seo.title,
+    template: "%s | Five Oaks Oakville",
+  },
   description: seo.description,
+  keywords: [...seo.keywords],
   applicationName: "Five Oaks Oakville project information",
   authors: [{ name: siteConfig.publisherLegalName }],
   creator: siteConfig.publisherLegalName,
   publisher: siteConfig.publisherLegalName,
+  category: "real estate",
   alternates: {
     canonical: "/",
   },
@@ -37,13 +42,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: siteConfig.siteUrl,
-    title: seo.title,
+    title: seo.ogTitle,
     description: seo.description,
     siteName: "Five Oaks Oakville project information",
   },
   twitter: {
     card: "summary_large_image",
-    title: seo.title,
+    title: seo.ogTitle,
     description: seo.description,
   },
   verification: {

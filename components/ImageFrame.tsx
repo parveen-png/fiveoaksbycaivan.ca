@@ -20,7 +20,7 @@ export function ImageFrame({
 }) {
   return (
     <figure className="overflow-hidden rounded-sm border border-stone bg-paper-muted">
-          <div className="relative aspect-video">
+      <div className="relative aspect-video">
         <Image
           src={src}
           alt={alt}

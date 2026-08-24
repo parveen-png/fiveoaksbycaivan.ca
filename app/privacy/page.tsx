@@ -5,7 +5,7 @@ import { Container } from "@/components/ui";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Five Oaks Oakville project information",
+  title: "Privacy Policy",
   description:
     "Privacy information for the independent Five Oaks Oakville project-information website.",
   robots: siteConfig.noindex ? { index: false, follow: false } : undefined,

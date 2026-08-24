@@ -1,22 +1,30 @@
 import { LeadForm } from "@/components/LeadForm";
-import { Container, Section } from "@/components/ui";
+import { Container, Eyebrow } from "@/components/ui";
 import { copy } from "@/lib/project-data";
 
 export function FinalCta() {
   return (
-    <Section ariaLabelledby="final-cta-heading">
+    <section
+      aria-labelledby="final-cta-heading"
+      className="scroll-mt-28 bg-forest py-16 text-paper-elevated md:py-24"
+    >
       <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,28rem)]">
         <div>
+          <Eyebrow className="text-paper-muted">Stay ready</Eyebrow>
           <h2
             id="final-cta-heading"
-            className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+            className="mt-3 font-display text-3xl tracking-tight md:text-4xl"
           >
-            Stay informed about Five Oaks
+            Stay informed about Five Oaks in Oakville
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-ink">{copy.finalCta}</p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-paper-muted">
+            {copy.finalCta}
+          </p>
         </div>
-        <LeadForm idPrefix="final" />
+        <div className="text-ink">
+          <LeadForm idPrefix="final" />
+        </div>
       </Container>
-    </Section>
+    </section>
   );
 }

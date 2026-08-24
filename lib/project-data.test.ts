@@ -114,8 +114,9 @@ describe("json-ld", () => {
     expect(json).not.toContain("RealEstateListing");
     expect(json).not.toContain("AggregateRating");
     expect(json).not.toContain("SingleFamilyResidence");
-    expect(json).toContain("FAQPage");
-    expect(json).toContain("WebSite");
-    expect(json).toContain("WebPage");
+        expect(json).toContain("FAQPage");
+        expect(json).toContain("WebSite");
+        expect(json).toContain("WebPage");
+        expect(json).toContain("BreadcrumbList");
   });
 });

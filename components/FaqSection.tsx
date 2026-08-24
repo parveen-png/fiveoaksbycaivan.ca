@@ -1,16 +1,17 @@
 import { ExternalLink } from "@/components/ExternalLink";
-import { Container, Section } from "@/components/ui";
+import { Container, Eyebrow, Section } from "@/components/ui";
 import { faqs, informationSources } from "@/lib/project-data";
 
 export function FaqSection() {
   return (
     <Section id="faqs" className="bg-paper-muted" ariaLabelledby="faq-heading">
       <Container>
+        <Eyebrow>Common buyer questions</Eyebrow>
         <h2
           id="faq-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
-          Five Oaks frequently asked questions
+          Five Oaks Oakville frequently asked questions
         </h2>
         <div className="mt-8 divide-y divide-stone border-y border-stone">
           {faqs.map((faq) => (

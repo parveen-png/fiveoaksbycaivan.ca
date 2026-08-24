@@ -1,13 +1,14 @@
-import { Container, Section } from "@/components/ui";
+import { Container, Eyebrow, Section } from "@/components/ui";
 import { buyerChecklist, copy } from "@/lib/project-data";
 
 export function BuyerChecklist() {
   return (
     <Section ariaLabelledby="checklist-heading">
       <Container>
+        <Eyebrow>Buyer due diligence</Eyebrow>
         <h2
           id="checklist-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
           What to confirm before buying at Five Oaks
         </h2>

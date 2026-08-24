@@ -254,11 +254,17 @@ export const copy = {
   whatIsFiveOaks:
     "Five Oaks is a coming-soon new-home community by Caivan Communities in Oakville, Ontario. Caivan currently identifies the community as a collection of single-detached homes and townhomes. Official pricing, floor plans, deposit details, incentives, exact project location, launch timing and occupancy information have not yet been published in the sources reviewed on August 24, 2026. Register for verified project updates as new information becomes available.",
   heroSupport:
-    "A coming-soon collection of single-detached homes and townhomes from Caivan Communities. Register for verified Five Oaks updates as official pricing, floor plans, deposit details and launch information become available.",
+    "Five Oaks is a coming-soon Caivan Communities project in Oakville, Ontario, planned with single-detached homes and townhomes. Official prices and floor plans are not public yet. Register to receive verified updates as those details are released.",
   formSupport:
-    "Register to receive verified updates as Five Oaks pricing, floor plans, deposit information and launch details become available.",
+    "Register to receive verified Five Oaks Oakville updates as official pricing, floor plans, deposit information and launch details become available.",
+  formTrust: [
+    "Source-checked project facts, dated August 24, 2026.",
+    "Notified when official pricing and floor plans are published.",
+    "No fabricated prices, unit counts or launch dates.",
+    "Marketing messages only if you opt in.",
+  ],
   finalCta:
-    "Five Oaks is coming to Oakville with single-detached homes and townhomes. Register to receive verified updates as additional project details become available.",
+    "Five Oaks is coming to Oakville with single-detached homes and townhomes. Register now so you can review verified pricing, plans and launch details as soon as they are published.",
   mapUnavailable:
     "A project map is not shown because verified Five Oaks coordinates have not been supplied. This placeholder will remain disabled until official project coordinates are confirmed.",
   privacyNearSubmit:
@@ -391,9 +397,18 @@ export const informationSources = [
 ] as const;
 
 export const seo = {
-  title: "Five Oaks by Caivan Oakville | Project Updates",
+  title: "Five Oaks Oakville | Caivan Townhomes & Detached Homes",
   description:
-    "Five Oaks is a coming-soon Caivan community in Oakville, Ontario. Register for verified updates on pricing, floor plans, deposits and launch information.",
+    "Five Oaks by Caivan is coming soon to Oakville with detached homes and townhomes. Register for verified updates on pricing, floor plans, deposits and launch details.",
+  ogTitle: "Five Oaks by Caivan in Oakville | Coming Soon Homes",
+  keywords: [
+    "Five Oaks Oakville",
+    "Five Oaks by Caivan",
+    "Caivan Oakville",
+    "Oakville townhomes coming soon",
+    "Oakville detached homes",
+    "Oakville new homes",
+  ],
 } as const;
 
 export const userMessages = {
@@ -426,25 +441,25 @@ export const buyerTimingOptions = [
 export const images = {
   hero: {
     src: "/images/oakville-tree-canopy.jpg",
-    alt: "Tree-lined residential street in a southern Ontario community, used as neighbourhood illustration only.",
+    alt: "Tree-lined residential street in Oakville-area southern Ontario. Neighbourhood illustration only; not a Five Oaks rendering.",
     width: 1536,
     height: 1024,
   },
   lakeshore: {
     src: "/images/oakville-lakeshore.jpg",
-    alt: "Lake Ontario shoreline with trees, used as Oakville neighbourhood illustration only.",
+    alt: "Lake Ontario shoreline with trees in Oakville. Neighbourhood illustration only; not a Five Oaks rendering.",
     width: 1536,
     height: 1024,
   },
   park: {
     src: "/images/oakville-park-trail.jpg",
-    alt: "Park trail through trees in a southern Ontario community, used as neighbourhood illustration only.",
+    alt: "Park trail through trees in Oakville-area southern Ontario. Neighbourhood illustration only; not a Five Oaks rendering.",
     width: 1536,
     height: 1024,
   },
   garden: {
     src: "/images/architectural-garden.jpg",
-    alt: "Residential garden path and stone wall, used as architectural illustration only.",
+    alt: "Residential garden path and stone wall in a southern Ontario setting. Architectural illustration only; not a Five Oaks rendering.",
     width: 1536,
     height: 1024,
   },

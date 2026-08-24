@@ -26,15 +26,15 @@ export default function OpenGraphImage() {
             fontSize: 22,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#2F4335",
+            color: "#8A5A3C",
           }}
         >
           Coming Soon • Oakville, Ontario
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 72, lineHeight: 1.05 }}>Five Oaks</div>
-          <div style={{ marginTop: 12, fontSize: 36 }}>
-            by Caivan Communities
+          <div style={{ fontSize: 70, lineHeight: 1.05 }}>Five Oaks</div>
+          <div style={{ marginTop: 12, fontSize: 32 }}>
+            Caivan townhomes and detached homes
           </div>
         </div>
         <div

@@ -1,16 +1,17 @@
 import { ImageFrame } from "@/components/ImageFrame";
-import { Container, Section, StatusBadge } from "@/components/ui";
+import { Container, Eyebrow, Section, StatusBadge } from "@/components/ui";
 import { homeCollection, images } from "@/lib/project-data";
 
 export function HomeCollection() {
   return (
     <Section id="homes" ariaLabelledby="homes-heading">
       <Container>
+        <Eyebrow>Confirmed home types</Eyebrow>
         <h2
           id="homes-heading"
-          className="font-display text-3xl tracking-tight text-ink md:text-4xl"
+          className="mt-3 font-display text-3xl tracking-tight text-ink md:text-4xl"
         >
-          Homes planned for Five Oaks
+          Homes planned for Five Oaks in Oakville
         </h2>
         <div className="mt-8 max-w-3xl">
           <ImageFrame
