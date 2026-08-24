@@ -381,21 +381,6 @@ export const faqs: readonly FaqItem[] = [
   },
 ] as const;
 
-export const informationSources = [
-  {
-    label: "Official Five Oaks page",
-    href: "https://caivan.com/greater-toronto-area/oakville/five-oaks/",
-  },
-  {
-    label: "Official Caivan Oakville communities page",
-    href: "https://caivan.com/greater-toronto-area/oakville/",
-  },
-  {
-    label: "Caivan contact page",
-    href: "https://caivan.com/contact/",
-  },
-] as const;
-
 export const seo = {
   title: "Five Oaks Oakville | Caivan Townhomes & Detached Homes",
   description:

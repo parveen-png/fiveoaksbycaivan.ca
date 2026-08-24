@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ExternalLink } from "@/components/ExternalLink";
 import { copy, project } from "@/lib/project-data";
 import { siteConfig } from "@/lib/site-config";
 
@@ -31,11 +30,6 @@ export function Footer() {
                 <Link className="underline underline-offset-2" href="/disclaimer">
                   Terms / Disclaimer
                 </Link>
-              </li>
-              <li>
-                <ExternalLink href={project.officialProjectUrl}>
-                  Official Five Oaks page
-                </ExternalLink>
               </li>
             </ul>
             {siteConfig.siteUrlConfigured ? (
