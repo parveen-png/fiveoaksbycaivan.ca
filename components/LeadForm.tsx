@@ -356,63 +356,26 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           />
         </Field>
 
-        <fieldset>
-          <legend className="text-sm font-medium text-ink">
-            I&apos;m interested in
-            <span aria-hidden="true" className="text-error">
-              {" "}
-              *
-            </span>
-            <span className="sr-only"> (required)</span>
-          </legend>
-          <div className="mt-1.5 grid gap-2 sm:grid-cols-3">
-            {productInterestOptions.map((option) => {
-              const selected = values.productInterest === option.value;
-              return (
-                <label
-                  key={option.value}
-                  className={`flex min-h-11 cursor-pointer items-center justify-center rounded-xl border px-2 py-2 text-center text-sm font-medium transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-clay ${
-                    selected
-                      ? "border-forest bg-forest-soft text-ink"
-                      : "border-stone bg-paper text-ink-muted hover:border-forest/40"
-                  }`}
-                >
-                  <input
-                    id={`${idPrefix}-productInterest-${option.value}`}
-                    className="sr-only"
-                    type="radio"
-                    name={`${idPrefix}-productInterest`}
-                    value={option.value}
-                    checked={selected}
-                    required
-                    onChange={() => update("productInterest", option.value)}
-                  />
-                  {option.label}
-                </label>
-              );
-            })}
-          </div>
-          {fieldError("productInterest") ? (
-            <p
-              id={`${idPrefix}-productInterest-error`}
-              className="mt-1 text-sm text-error"
-              role="alert"
-            >
-              {fieldError("productInterest")}
-            </p>
-          ) : null}
-        </fieldset>
-
-        <Field id={`${idPrefix}-buyerTiming`} label="Buyer timing" hint="Optional">
+        <Field
+          id={`${idPrefix}-productInterest`}
+          label="I'm interested in"
+          required
+          error={fieldError("productInterest")}
+        >
           <select
-            id={`${idPrefix}-buyerTiming`}
-            name="buyerTiming"
-            value={values.buyerTiming}
-            onChange={(event) => update("buyerTiming", event.target.value)}
-            className={inputClass(false)}
+            id={`${idPrefix}-productInterest`}
+            name="productInterest"
+            value={values.productInterest}
+            required
+            onChange={(event) => update("productInterest", event.target.value)}
+            aria-invalid={fieldError("productInterest") ? true : undefined}
+            aria-describedby={
+              fieldError("productInterest") ? `${idPrefix}-productInterest-error` : undefined
+            }
+            className={inputClass(Boolean(fieldError("productInterest")))}
           >
             <option value="">Select an option</option>
-            {buyerTimingOptions.map((option) => (
+            {productInterestOptions.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
               </option>
@@ -420,29 +383,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
           </select>
         </Field>
 
-        <div className="rounded-sm border border-stone bg-paper p-3">
-          <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-ink">
-            <input
-              id={`${idPrefix}-marketingConsent`}
-              name="marketingConsent"
-              type="checkbox"
-              checked={values.marketingConsent}
-              onChange={(event) => update("marketingConsent", event.target.checked)}
-              className="mt-1 h-4 w-4 shrink-0 accent-forest"
-            />
-            <span>{consentLabel}</span>
-          </label>
-        </div>
 
-        <p className="text-xs leading-5 text-ink-muted">
-          By submitting this form, you acknowledge the{" "}
-          <a className="underline underline-offset-2" href={privacyHref}>
-            Privacy Policy
-          </a>{" "}
-          and understand that your information will be used to respond to your
-          request. Marketing messages are sent only in accordance with the consent
-          choices shown above.
-        </p>
 
         {fieldError("form") ? (
           <p className="text-sm text-error" role="alert">
