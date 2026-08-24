@@ -19,7 +19,7 @@ export function securityHeaders(): Array<{ key: string; value: string }> {
         "form-action 'self'",
         "frame-ancestors 'none'",
         "object-src 'none'",
-        "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com",
+        "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://ewzutahmskuhbsalpygn.supabase.co",
         "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
         "style-src 'self' 'unsafe-inline'",
         "font-src 'self'",
@@ -36,7 +36,16 @@ export function originIsAllowed(request: Request, siteUrl: string): boolean {
     return secFetchSite === "same-origin" || secFetchSite === null;
   }
   try {
-    return new URL(origin).origin === new URL(siteUrl).origin;
+    const incoming = new URL(origin).origin;
+    const allowed = new Set<string>([new URL(siteUrl).origin]);
+    const host = request.headers.get("host");
+    if (host) {
+      const proto = request.headers.get("x-forwarded-proto") || "https";
+      allowed.add(`${proto}://${host}`);
+    }
+    allowed.add("https://fiveoaksbycaivan.ca");
+    allowed.add("https://www.fiveoaksbycaivan.ca");
+    return allowed.has(incoming);
   } catch {
     return false;
   }
