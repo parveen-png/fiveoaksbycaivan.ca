@@ -10,6 +10,7 @@ import { flattenLeadErrors, leadInputSchema } from "./validation";
 import { buildJsonLd } from "./json-ld";
 import { redactRecord } from "./logger";
 import { sanitizeAnalyticsParams } from "./analytics";
+import { siteConfig, sitePageUrl } from "./site-config";
 
 describe("project facts", () => {
   it("keeps exactly ten FAQs", () => {
@@ -114,9 +115,17 @@ describe("json-ld", () => {
     expect(json).not.toContain("RealEstateListing");
     expect(json).not.toContain("AggregateRating");
     expect(json).not.toContain("SingleFamilyResidence");
-        expect(json).toContain("FAQPage");
-        expect(json).toContain("WebSite");
-        expect(json).toContain("WebPage");
-        expect(json).toContain("BreadcrumbList");
+    expect(json).toContain("FAQPage");
+    expect(json).toContain("WebSite");
+    expect(json).toContain("WebPage");
+    expect(json).toContain("BreadcrumbList");
+  });
+});
+
+describe("site page URLs", () => {
+  it("uses a trailing slash only on the homepage", () => {
+    expect(sitePageUrl("/")).toBe(`${siteConfig.siteUrl}/`);
+    expect(sitePageUrl("/privacy")).toBe(`${siteConfig.siteUrl}/privacy`);
+    expect(sitePageUrl("/disclaimer")).toBe(`${siteConfig.siteUrl}/disclaimer`);
   });
 });

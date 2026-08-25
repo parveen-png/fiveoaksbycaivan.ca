@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
-import { JsonLd } from "@/components/JsonLd";
 import { serverEnv } from "@/lib/env";
 import { seo } from "@/lib/project-data";
 import { siteConfig } from "@/lib/site-config";
@@ -24,16 +23,12 @@ export const metadata: Metadata = {
   keywords: [...seo.keywords],
   applicationName: "Five Oaks Oakville project information",
   category: "real estate",
-  alternates: {
-    canonical: "/",
-  },
   robots: siteConfig.noindex
     ? { index: false, follow: false }
     : { index: true, follow: true },
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: siteConfig.siteUrl,
     title: seo.ogTitle,
     description: seo.description,
     siteName: "Five Oaks Oakville project information",
@@ -72,7 +67,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to main content
         </a>
-        <JsonLd />
         <Analytics />
         {children}
       </body>

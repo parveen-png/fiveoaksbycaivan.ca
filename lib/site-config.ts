@@ -125,6 +125,15 @@ export const siteConfig = {
   placeholders: PLACEHOLDERS,
 } as const;
 
+/** Absolute URL for a site path. The homepage always includes a trailing slash. */
+export function sitePageUrl(pathname: string = "/"): string {
+  if (pathname === "/" || pathname === "") {
+    return `${siteConfig.siteUrl}/`;
+  }
+  const path = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return `${siteConfig.siteUrl}${path}`;
+}
+
 export function consentWording(publisherLegalName: string): string {
   return `Yes, I would like to receive project updates and other commercial electronic messages from ${publisherLegalName}. I understand I can unsubscribe at any time.`;
 }

@@ -3,12 +3,18 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui";
 import { copy, project } from "@/lib/project-data";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, sitePageUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
   description:
     "Independent-site disclaimer for the Five Oaks Oakville project-information website.",
+  alternates: {
+    canonical: sitePageUrl("/disclaimer"),
+  },
+  openGraph: {
+    url: sitePageUrl("/disclaimer"),
+  },
   robots: siteConfig.noindex ? { index: false, follow: false } : undefined,
 };
 

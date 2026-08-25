@@ -1,18 +1,19 @@
 import { faqs, images, project, seo } from "@/lib/project-data";
-import { identityIsPlaceholder, siteConfig } from "@/lib/site-config";
+import { identityIsPlaceholder, siteConfig, sitePageUrl } from "@/lib/site-config";
 
 export function buildJsonLd() {
-  const pageUrl = siteConfig.siteUrl;
+  const origin = siteConfig.siteUrl;
+  const pageUrl = sitePageUrl("/");
   const imageUrl = images.hero.src.startsWith("http")
     ? images.hero.src
-    : `${pageUrl}${images.hero.src}`;
+    : `${origin}${images.hero.src}`;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${pageUrl}/#website`,
+        "@id": `${origin}/#website`,
         url: pageUrl,
         name: "Five Oaks Oakville project information",
         alternateName: [
@@ -21,12 +22,12 @@ export function buildJsonLd() {
         ],
         description:
           "Independent informational website about Five Oaks by Caivan Communities in Oakville, Ontario.",
-        publisher: { "@id": `${pageUrl}/#publisher` },
+        publisher: { "@id": `${origin}/#publisher` },
         inLanguage: "en-CA",
       },
       {
         "@type": "Organization",
-        "@id": `${pageUrl}/#publisher`,
+        "@id": `${origin}/#publisher`,
         name: "Five Oaks Oakville project information",
         url: pageUrl,
         ...(!identityIsPlaceholder(siteConfig.publisherEmail)
@@ -38,14 +39,14 @@ export function buildJsonLd() {
       },
       {
         "@type": "WebPage",
-        "@id": `${pageUrl}/#webpage`,
+        "@id": `${origin}/#webpage`,
         url: pageUrl,
         name: seo.title,
         headline: "Five Oaks by Caivan in Oakville",
         description: seo.description,
         datePublished: "2026-08-24",
         dateModified: "2026-08-24",
-        isPartOf: { "@id": `${pageUrl}/#website` },
+        isPartOf: { "@id": `${origin}/#website` },
         about: [
           {
             "@type": "Thing",
@@ -69,7 +70,7 @@ export function buildJsonLd() {
           { "@type": "Organization", name: project.developer },
           { "@type": "Place", name: "Oakville, Ontario" },
         ],
-        primaryImageOfPage: { "@id": `${pageUrl}/#primaryimage` },
+        primaryImageOfPage: { "@id": `${origin}/#primaryimage` },
         inLanguage: "en-CA",
         speakable: {
           "@type": "SpeakableSpecification",
@@ -78,7 +79,7 @@ export function buildJsonLd() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${pageUrl}/#breadcrumb`,
+        "@id": `${origin}/#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
@@ -90,7 +91,7 @@ export function buildJsonLd() {
       },
       {
         "@type": "ImageObject",
-        "@id": `${pageUrl}/#primaryimage`,
+        "@id": `${origin}/#primaryimage`,
         url: imageUrl,
         contentUrl: imageUrl,
         caption:
@@ -100,8 +101,8 @@ export function buildJsonLd() {
       },
       {
         "@type": "FAQPage",
-        "@id": `${pageUrl}/#faq`,
-        url: `${pageUrl}/#faqs`,
+        "@id": `${origin}/#faq`,
+        url: `${origin}/#faqs`,
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,

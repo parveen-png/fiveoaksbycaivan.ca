@@ -2,12 +2,18 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, sitePageUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy information for the independent Five Oaks Oakville project-information website.",
+  alternates: {
+    canonical: sitePageUrl("/privacy"),
+  },
+  openGraph: {
+    url: sitePageUrl("/privacy"),
+  },
   robots: siteConfig.noindex ? { index: false, follow: false } : undefined,
 };
 
