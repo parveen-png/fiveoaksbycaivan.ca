@@ -22,7 +22,6 @@ export function LocationSection() {
             width={images.communityAerial.width}
             height={images.communityAerial.height}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            caption={copy.aerialQualifier}
           />
           <ImageFrame
             src={images.pondPathway.src}
@@ -30,7 +29,6 @@ export function LocationSection() {
             width={images.pondPathway.width}
             height={images.pondPathway.height}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            caption={copy.aerialQualifier}
           />
         </div>
         <p className="mt-8 max-w-3xl text-base leading-7 text-ink">{copy.oakvilleContext}</p>

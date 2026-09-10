@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { copy } from "@/lib/project-data";
 
 export function ImageFrame({
   src,
@@ -8,7 +7,7 @@ export function ImageFrame({
   height,
   priority = false,
   sizes,
-  caption = copy.imageQualifier,
+  caption,
 }: {
   src: string;
   alt: string;
@@ -32,9 +31,11 @@ export function ImageFrame({
           className="h-full w-full object-cover"
         />
       </div>
-      <figcaption className="px-3 py-2 text-xs tracking-wide text-ink-muted">
-        {caption}
-      </figcaption>
+      {caption ? (
+        <figcaption className="px-3 py-2 text-xs tracking-wide text-ink-muted">
+          {caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }

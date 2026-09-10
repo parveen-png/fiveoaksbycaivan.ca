@@ -1,11 +1,6 @@
 import { ImageFrame } from "@/components/ImageFrame";
 import { Container, Eyebrow, Section, StatusBadge } from "@/components/ui";
-import {
-  copy,
-  elevations,
-  homeCollection,
-  images,
-} from "@/lib/project-data";
+import { elevations, homeCollection, images } from "@/lib/project-data";
 
 export function HomeCollection() {
   return (
@@ -32,7 +27,6 @@ export function HomeCollection() {
                   width={image.width}
                   height={image.height}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  caption={copy.imageQualifier}
                 />
                 <div className="p-6">
                   <h3 className="font-display text-2xl text-ink">{home.title}</h3>
@@ -66,7 +60,6 @@ export function HomeCollection() {
                   width={image.width}
                   height={image.height}
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  caption={`${elevation.type} · ${copy.imageQualifier}`}
                 />
                 <h4 className="mt-3 font-display text-lg text-ink">
                   {elevation.title}
@@ -96,7 +89,6 @@ export function HomeCollection() {
               width={image.width}
               height={image.height}
               sizes="(max-width: 768px) 100vw, 50vw"
-              caption={copy.imageQualifier}
             />
           ))}
         </div>
