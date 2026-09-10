@@ -310,8 +310,11 @@ export const copy = {
     "This checklist is general buyer due-diligence information, not individualized legal or financial advice.",
   whatIsFiveOaks:
     "Five Oaks is an exclusive new community by Caivan, coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. Surrounded by Lions Valley Park and overlooking Sixteen Mile Creek, it offers freehold townhomes of 1,388–2,773 sq. ft. and detached homes of 3,187–5,170 sq. ft. on 40′, 42′ and 50′ frontages, including select premium lots backing onto protected natural surroundings. Parking is listed at up to six vehicles. A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Official starting prices, floor plans, deposits and occupancy remain to be published. Register for updates.",
+  heroHeadline: "Freehold singles & townhomes",
+  heroSubhead:
+    "Beautifully situated above Sixteen Mile Creek, backing onto the lush Lions Valley Park.",
   heroSupport:
-    "Coming this fall to Dundas Street West and Neyagawa Boulevard. Freehold townhomes and detached homes beside Lions Valley Park, with an HST rebate of up to $130,000 stated for this release. Register for pricing, plans and launch details.",
+    "Beautifully situated above Sixteen Mile Creek, backing onto the lush Lions Valley Park. Coming this fall to Dundas Street West and Neyagawa Boulevard.",
   formSupport:
     "Register for Five Oaks Oakville updates on pricing, floor plans, deposits, the stated HST rebate and fall launch details.",
   formTrust: [

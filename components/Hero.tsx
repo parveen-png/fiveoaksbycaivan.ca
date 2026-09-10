@@ -1,13 +1,15 @@
 import Image from "next/image";
-import { HeroCta } from "@/components/HeroCta";
 import { LeadForm } from "@/components/LeadForm";
 import { Container } from "@/components/ui";
 import { copy, images } from "@/lib/project-data";
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="page-title" className="relative flex items-center pt-28 pb-16 lg:pt-36 lg:pb-20">
-      {/* Background Image */}
+    <section
+      id="top"
+      aria-labelledby="page-title"
+      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pt-24 pb-8 sm:pt-28 lg:pt-32 lg:pb-12"
+    >
       <div className="absolute inset-0 z-0">
         <Image
           src={images.hero.src}
@@ -15,43 +17,43 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_18%]"
         />
-        {/* Dark overlay for high contrast */}
-        <div className="absolute inset-0 bg-forest/85 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/80 to-forest/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#7eb7c9]/35 via-transparent to-forest/55" />
+        <div className="absolute inset-x-0 top-0 h-[42%] bg-gradient-to-b from-[#9ec9d6]/40 to-transparent" />
       </div>
 
-      <Container className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <div className="text-white">
-          <p className="inline-block rounded-full bg-clay/20 border border-clay/30 px-3 py-1 text-xs font-bold uppercase tracking-widest text-clay-100 mb-6">
-            Coming this fall • Dundas &amp; Neyagawa, Oakville
+      <Container className="relative z-10 flex flex-1 flex-col lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,26rem)] lg:items-end lg:gap-12">
+        <div className="mx-auto max-w-4xl pt-6 text-center lg:mx-0 lg:max-w-none lg:self-center lg:pt-0 lg:text-left">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#1d4a5c] sm:text-xs">
+            Five Oaks by Caivan · Coming this fall
           </p>
           <h1
             id="page-title"
-            className="font-display text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl"
+            className="mt-5 font-display font-light text-white drop-shadow-[0_2px_16px_rgba(15,50,70,0.35)]"
           >
-            Five Oaks by Caivan in Oakville
+            <span className="sr-only">Five Oaks Oakville: </span>
+            <span className="block text-[1.65rem] leading-[1.15] tracking-[0.22em] uppercase sm:text-4xl md:text-5xl lg:text-[3.35rem] lg:tracking-[0.26em]">
+              Freehold singles
+            </span>
+            <span className="mt-2 block text-[1.65rem] leading-[1.15] tracking-[0.22em] uppercase sm:mt-3 sm:text-4xl md:text-5xl lg:text-[3.35rem] lg:tracking-[0.26em]">
+              &amp; townhomes
+            </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
-            {copy.heroSupport}
+          <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-[#1d4a5c] sm:text-lg md:text-xl lg:mx-0 lg:max-w-xl">
+            {copy.heroSubhead}
           </p>
-
-          <div className="mt-8 lg:hidden">
-            <HeroCta />
-          </div>
+          <p className="mt-3 text-sm tracking-wide text-[#1d4a5c]/80">
+            Dundas Street West &amp; Neyagawa Boulevard, Oakville
+          </p>
         </div>
 
-        <div className="w-full max-w-md mx-auto lg:ml-auto lg:mr-0">
-          <div className="rounded-2xl bg-white p-1 shadow-2xl">
+        <div className="mt-10 w-full max-w-md self-center lg:mt-0 lg:ml-auto lg:self-end">
+          <div className="rounded-2xl bg-white/95 p-1 shadow-[0_24px_60px_-20px_rgba(15,40,55,0.55)] backdrop-blur-sm">
             <LeadForm idPrefix="hero" />
           </div>
         </div>
       </Container>
-      
-      <p className="absolute bottom-4 left-4 right-4 z-10 text-center text-xs tracking-wide text-white/60">
-        {copy.aerialQualifier}
-      </p>
     </section>
   );
 }
