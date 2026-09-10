@@ -202,7 +202,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
             Request received
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold text-ink">
-            You&apos;re on the Five Oaks update list
+            You&apos;re on the Five Oaks by Caivan update list
           </h2>
           <p className="mt-4 text-base leading-7 text-ink">{userMessages.success}</p>
         </div>
@@ -217,7 +217,7 @@ export function LeadForm({ idPrefix }: LeadFormProps) {
     >
       <div className="absolute inset-x-0 top-0 h-1.5 bg-clay" />
       <h2 id={headingId} className="font-display text-2xl font-bold tracking-tight text-ink">
-        Get Five Oaks Project Updates
+        Five Oaks by Caivan Updates
       </h2>
       <p className="mt-3 text-sm leading-6 text-ink-muted">{copy.formSupport}</p>
 

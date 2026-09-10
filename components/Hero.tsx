@@ -39,7 +39,9 @@ export function Hero() {
             id="page-title"
             className="font-display font-semibold uppercase leading-[1.1] drop-shadow-xl"
           >
-            <span className="sr-only">Five Oaks Oakville: </span>
+            <span className="mb-3 block text-xl tracking-[0.18em] text-[#b7e0ea] sm:text-2xl">
+              Five Oaks by Caivan
+            </span>
             <span className="block text-4xl tracking-[0.12em] sm:text-5xl md:text-[3.5rem] md:tracking-[0.14em]">
               Freehold singles
             </span>

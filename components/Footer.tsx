@@ -44,7 +44,7 @@ export function Footer() {
             {copy.legalFooterDisclosure}
           </p>
           <p className="mt-6 text-sm text-ink-muted">
-            © {year} Five Oaks informational site. This website is not operated
+            © {year} Five Oaks by Caivan informational site. This website is not operated
             by {project.developer}.
           </p>
         </div>

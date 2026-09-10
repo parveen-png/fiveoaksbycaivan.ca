@@ -27,7 +27,7 @@ export interface SourceConflict {
 }
 
 export const project = {
-  name: "Five Oaks",
+  name: "Five Oaks by Caivan",
   developer: "Caivan Communities",
   municipality: "Oakville, Ontario",
   municipalityShort: "Oakville",
@@ -290,7 +290,7 @@ export const copy = {
   pricingCaution:
     "Pre-construction pricing, incentives and deposit structures can change between releases. The HST rebate of up to $130,000, including for investors, should be confirmed in current official documents.",
   locationLead:
-    "Five Oaks is coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. The community is surrounded by Lions Valley Park and overlooks Sixteen Mile Creek, with select premium lots backing onto protected natural surroundings.",
+    "Five Oaks by Caivan is coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. The community is surrounded by Lions Valley Park and overlooks Sixteen Mile Creek, with select premium lots backing onto protected natural surroundings.",
   oakvilleContext:
     "Nearby amenities identified for this location include Oakville Trafalgar Memorial Hospital, Sixteen Mile Sports Complex, Highway 407, Bronte GO and Downtown Oakville. Nearby schools identified are Forest Trail Public School and Garth Webb Secondary School.",
   oakvilleSafeFacts: [
@@ -303,20 +303,20 @@ export const copy = {
   developerSummary:
     "Five Oaks is by Caivan. Caivan reports 4,200 homes built and no cancelled projects. Its public materials describe a multidisciplinary homebuilding team focused on home design, construction quality and the homeowner experience.",
   developerCaution:
-    "Features, construction methods and specifications shown in other Caivan communities should still be confirmed in official Five Oaks documents for this release.",
+    "Features, construction methods and specifications shown in other Caivan communities should still be confirmed in official Five Oaks by Caivan documents for this release.",
   lawyerReview:
     "Have your lawyer review the Agreement of Purchase and Sale and all schedules before applicable deadlines.",
   checklistIntro:
     "This checklist is general buyer due-diligence information, not individualized legal or financial advice.",
   whatIsFiveOaks:
-    "Five Oaks is an exclusive new community by Caivan, coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. Surrounded by Lions Valley Park and overlooking Sixteen Mile Creek, it offers freehold townhomes of 1,388–2,773 sq. ft. and detached homes of 3,187–5,170 sq. ft. on 40′, 42′ and 50′ frontages, including select premium lots backing onto protected natural surroundings. Parking is listed at up to six vehicles. A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Official starting prices, floor plans, deposits and occupancy remain to be published. Register for updates.",
+    "Five Oaks by Caivan is an exclusive new community coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. Surrounded by Lions Valley Park and overlooking Sixteen Mile Creek, it offers freehold townhomes of 1,388–2,773 sq. ft. and detached homes of 3,187–5,170 sq. ft. on 40′, 42′ and 50′ frontages, including select premium lots backing onto protected natural surroundings. Parking is listed at up to six vehicles. A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Official starting prices, floor plans, deposits and occupancy remain to be published. Register for updates.",
   heroHeadline: "Freehold singles & townhomes",
   heroSubhead:
     "Beautifully situated above Sixteen Mile Creek, backing onto the lush Lions Valley Park.",
   heroSupport:
     "Beautifully situated above Sixteen Mile Creek, backing onto the lush Lions Valley Park. Coming this fall to Dundas Street West and Neyagawa Boulevard.",
   formSupport:
-    "Register for Five Oaks Oakville updates on pricing, floor plans, deposits, the stated HST rebate and fall launch details.",
+    "Register for Five Oaks by Caivan updates on pricing, floor plans, deposits, the stated HST rebate and fall launch details.",
   formTrust: [
     "Project facts updated September 10, 2026.",
     "Townhome and detached sizes, frontages and location now listed.",
@@ -324,9 +324,9 @@ export const copy = {
     "Marketing messages only if you opt in.",
   ],
   finalCta:
-    "Five Oaks combines an Oakville address at Dundas and Neyagawa, natural surroundings at Lions Valley Park, nearby schools and a stated HST rebate of up to $130,000. Register to review pricing, plans and launch details as they are published.",
+    "Five Oaks by Caivan combines an Oakville address at Dundas and Neyagawa, natural surroundings at Lions Valley Park, nearby schools and a stated HST rebate of up to $130,000. Register to review pricing, plans and launch details as they are published.",
   mapUnavailable:
-    "Five Oaks is identified at Dundas Street West and Neyagawa Boulevard. A pin map is not shown until verified project coordinates are supplied for public display.",
+    "Five Oaks by Caivan is identified at Dundas Street West and Neyagawa Boulevard. A pin map is not shown until verified project coordinates are supplied for public display.",
   privacyNearSubmit:
     "By submitting this form, you acknowledge the Privacy Policy and understand that your information will be used to respond to your request. Marketing messages are sent only in accordance with the consent choices shown above.",
 } as const;
@@ -343,14 +343,14 @@ export const registrationBenefits = [
   "Updates when official floor plans become available.",
   "Updates on the stated HST rebate of up to $130,000.",
   "Launch timing for the fall release at Dundas and Neyagawa.",
-  "Changes to verified Five Oaks project information.",
+  "Changes to verified Five Oaks by Caivan project information.",
 ] as const;
 
 export const homeCollection = [
   {
     id: "townhomes",
     title: "Freehold townhomes",
-    copy: "Townhomes at Five Oaks are listed at 1,388–2,773 sq. ft. Collections shown on this page include the 24′ Collection, Advantage Townhomes and back-to-back (B2B) elevations. Detailed floor plans, deposits and pricing remain to be published.",
+    copy: "Townhomes at Five Oaks by Caivan are listed at 1,388–2,773 sq. ft. Collections shown on this page include the 24′ Collection, Advantage Townhomes and back-to-back (B2B) elevations. Detailed floor plans, deposits and pricing remain to be published.",
     status: "1,388–2,773 sq. ft.",
     imageId: "advantageTowns" as const,
   },
@@ -394,63 +394,63 @@ export const faqs: readonly FaqItem[] = [
   {
     question: "What is Five Oaks by Caivan?",
     answer:
-      "Five Oaks is an exclusive new Caivan community coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. It offers freehold townhomes and detached homes beside Lions Valley Park and Sixteen Mile Creek, including select premium lots backing onto protected natural surroundings.",
+      "Five Oaks by Caivan is an exclusive new community coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. It offers freehold townhomes and detached homes beside Lions Valley Park and Sixteen Mile Creek, including select premium lots backing onto protected natural surroundings.",
   },
   {
-    question: "Where is Five Oaks located?",
+    question: "Where is Five Oaks by Caivan located?",
     answer:
-      "Five Oaks is at Dundas Street West and Neyagawa Boulevard in Oakville, surrounded by Lions Valley Park and overlooking Sixteen Mile Creek. Nearby amenities identified for this location include Oakville Trafalgar Memorial Hospital, Sixteen Mile Sports Complex, Highway 407, Bronte GO and Downtown Oakville.",
+      "Five Oaks by Caivan is at Dundas Street West and Neyagawa Boulevard in Oakville, surrounded by Lions Valley Park and overlooking Sixteen Mile Creek. Nearby amenities identified for this location include Oakville Trafalgar Memorial Hospital, Sixteen Mile Sports Complex, Highway 407, Bronte GO and Downtown Oakville.",
   },
   {
-    question: "What types of homes are planned at Five Oaks?",
+    question: "What types of homes are planned at Five Oaks by Caivan?",
     answer:
       "Freehold townhomes of 1,388–2,773 sq. ft. and detached homes of 3,187–5,170 sq. ft. Detached frontages are listed at 40′, 42′ and 50′. Parking is listed at up to six vehicles. Official floor plans remain to be published.",
   },
   {
-    question: "Are the Five Oaks townhomes freehold?",
+    question: "Are the Five Oaks by Caivan townhomes freehold?",
     answer:
-      "Yes. Townhomes at Five Oaks are described as freehold. Buyers should still confirm tenure for their specific home and release in official purchase documents.",
+      "Yes. Townhomes at Five Oaks by Caivan are described as freehold. Buyers should still confirm tenure for their specific home and release in official purchase documents.",
   },
   {
-    question: "How much will homes at Five Oaks cost?",
+    question: "How much will homes at Five Oaks by Caivan cost?",
     answer:
       "Starting prices and a public price list have not been published. A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Register for updates rather than relying on undated third-party price lists.",
   },
   {
-    question: "Are Five Oaks floor plans available?",
+    question: "Are Five Oaks by Caivan floor plans available?",
     answer:
       "Official floor plans have not been published. Elevations shown on this page are artist's renderings for the 24′ Collection, Advantage Townhomes, B2B, The Starling, The Merlin and The Sandhill. Register to be notified when official plans are released.",
   },
   {
-    question: "What is the Five Oaks deposit structure?",
+    question: "What is the Five Oaks by Caivan deposit structure?",
     answer:
       "The deposit schedule has not been published. Deposit amounts and payment dates should be confirmed in official documents before any purchase decision.",
   },
   {
-    question: "Are there incentives for Five Oaks?",
+    question: "Are there incentives for Five Oaks by Caivan?",
     answer:
       "A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Confirm current eligibility and amounts against official developer documents, as incentives can change.",
   },
   {
-    question: "When will Five Oaks launch?",
+    question: "When will Five Oaks by Caivan launch?",
     answer:
-      "Five Oaks is coming this fall. A specific sales-launch calendar date and occupancy timing have not been published. Register for launch updates.",
+      "Five Oaks by Caivan is coming this fall. A specific sales-launch calendar date and occupancy timing have not been published. Register for launch updates.",
   },
   {
-    question: "How can I receive Five Oaks updates?",
+    question: "How can I receive Five Oaks by Caivan updates?",
     answer:
       "Submit the project-update form on this page. The publisher identified in the footer will use the contact information you provide to respond to your request. Ongoing promotional messages are sent only if you opt in. You can unsubscribe from commercial electronic messages at any time.",
   },
 ] as const;
 
 export const seo = {
-  title: "Five Oaks Oakville | Dundas & Neyagawa Townhomes & Detached",
+  title: "Five Oaks by Caivan | Dundas & Neyagawa Townhomes & Detached",
   description:
     "Five Oaks by Caivan is coming this fall to Dundas and Neyagawa in Oakville. Freehold townhomes 1,388–2,773 sq. ft., detached 3,187–5,170 sq. ft., HST rebate up to $130,000. Register for updates.",
   ogTitle: "Five Oaks by Caivan | Dundas & Neyagawa, Oakville",
   keywords: [
-    "Five Oaks Oakville",
     "Five Oaks by Caivan",
+    "Five Oaks Oakville",
     "Caivan Oakville",
     "Dundas Neyagawa new homes",
     "Oakville freehold townhomes",
@@ -467,7 +467,7 @@ export const userMessages = {
   productInterest: "Select a home type interest.",
   loading: "Submitting your request…",
   success:
-    "You're registered for Five Oaks updates. We'll use the contact information you provided to keep you informed according to your communication preferences.",
+    "You're registered for Five Oaks by Caivan updates. We'll use the contact information you provided to keep you informed according to your communication preferences.",
   failure:
     "We couldn't submit your request right now. Your information has not been confirmed as received. Please try again.",
 } as const;
