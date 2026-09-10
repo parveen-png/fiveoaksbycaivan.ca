@@ -30,7 +30,9 @@ export function PricingStatus() {
                 <dt className="text-sm font-semibold text-ink">{item.label}</dt>
                 <dd className="mt-2 flex flex-wrap items-center gap-2 text-sm leading-6 text-ink-muted">
                   <span>{displayFactValue(fact)}</span>
-                  <StatusBadge>TBA</StatusBadge>
+                  {fact.status === "TBA" ? (
+                    <StatusBadge>TBA</StatusBadge>
+                  ) : null}
                 </dd>
               </div>
             );

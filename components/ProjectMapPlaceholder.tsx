@@ -11,12 +11,9 @@ export function ProjectMapPlaceholder() {
       >
         <h3 className="font-display text-xl text-ink">Project map</h3>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-ink-muted">
-          A project map is not shown because verified Five Oaks coordinates have
-          not been supplied. This placeholder remains disabled until{" "}
-          <code className="rounded-sm bg-paper px-1 py-0.5 text-[0.8em]">
-            [VERIFIED_PROJECT_COORDINATES]
-          </code>{" "}
-          are confirmed from official project material.
+          Five Oaks is identified at Dundas Street West and Neyagawa Boulevard.
+          A map pin is not shown until verified project coordinates are supplied
+          for public display.
         </p>
       </div>
     );

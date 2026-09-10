@@ -17,21 +17,22 @@ describe("project facts", () => {
     expect(faqs).toHaveLength(10);
   });
 
-  it("renders TBA facts as honest placeholders", () => {
+  it("renders unpublished commercial terms as TBA", () => {
     expect(displayFactValue(getFact("pricing"))).toBe("To be announced");
     expect(displayFactValue(getFact("floor-plans"))).toBe("To be announced");
     expect(displayFactValue(getFact("deposit"))).toBe("To be announced");
-    expect(displayFactValue(getFact("incentives"))).toBe(
-      "Request the latest verified update",
-    );
-    expect(displayFactValue(getFact("launch-date"))).toBe("To be announced");
     expect(displayFactValue(getFact("occupancy"))).toBe("To be announced");
   });
 
-  it("does not invent a project address", () => {
+  it("lists the Dundas and Neyagawa location", () => {
     const location = facts.find((fact) => fact.id === "location");
-    expect(location?.value).toBe("Oakville, Ontario");
+    expect(location?.value).toContain("Dundas Street West and Neyagawa Boulevard");
     expect(location?.status).toBe("VERIFIED");
+  });
+
+  it("lists the stated HST rebate incentive", () => {
+    expect(displayFactValue(getFact("incentives"))).toContain("130,000");
+    expect(getFact("launch-date").value).toBe("Coming this fall");
   });
 });
 

@@ -39,16 +39,18 @@ export default function DisclaimerPage() {
               representative, or to offer homes for sale through this page.
             </p>
             <p>
-              Information on this page is based on official materials reviewed on
-              August 24, 2026. Unconfirmed details are marked to be announced.
-              Project information can change. Confirm current details against
-              official developer documents before making a purchase decision.
+              Information on this page was updated September 10, 2026. Unconfirmed
+              details such as starting prices, floor plans, deposits and occupancy
+              are marked to be announced. Project information can change. Confirm
+              current details against official developer documents before making a
+              purchase decision.
             </p>
             <p>
-              Neighbourhood photographs are generic supporting imagery and do not
-              depict {project.name}. This website does not provide legal,
-              financial or real-estate advice. Have a lawyer review any Agreement
-              of Purchase and Sale and related schedules.
+              Elevations and interiors are artist&apos;s concepts. Aerial
+              photographs show the Lions Valley / Sixteen Mile Creek setting.
+              This website does not provide legal, financial or real-estate
+              advice. Have a lawyer review any Agreement of Purchase and Sale and
+              related schedules.
             </p>
             <p>{copy.legalReviewFlag}</p>
           </div>

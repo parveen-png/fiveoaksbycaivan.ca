@@ -29,7 +29,7 @@ export default function OpenGraphImage() {
             color: "#38bdf8",
           }}
         >
-          Coming Soon • Oakville, Ontario
+          Coming this fall • Dundas & Neyagawa
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 72, lineHeight: 1.05, fontWeight: 700 }}>Five Oaks</div>

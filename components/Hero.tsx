@@ -25,7 +25,7 @@ export function Hero() {
       <Container className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div className="text-white">
           <p className="inline-block rounded-full bg-clay/20 border border-clay/30 px-3 py-1 text-xs font-bold uppercase tracking-widest text-clay-100 mb-6">
-            Coming Soon • Oakville, Ontario
+            Coming this fall • Dundas &amp; Neyagawa, Oakville
           </p>
           <h1
             id="page-title"
@@ -50,7 +50,7 @@ export function Hero() {
       </Container>
       
       <p className="absolute bottom-4 left-4 right-4 z-10 text-center text-xs tracking-wide text-white/60">
-        {copy.imageQualifier} This photograph does not depict Five Oaks.
+        {copy.aerialQualifier}
       </p>
     </section>
   );

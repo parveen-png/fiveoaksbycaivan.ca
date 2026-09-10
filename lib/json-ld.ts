@@ -45,13 +45,13 @@ export function buildJsonLd() {
         headline: "Five Oaks by Caivan in Oakville",
         description: seo.description,
         datePublished: "2026-08-24",
-        dateModified: "2026-08-24",
+        dateModified: "2026-09-10",
         isPartOf: { "@id": `${origin}/#website` },
         about: [
           {
             "@type": "Thing",
             name: project.name,
-            description: `${project.name} is a coming-soon new-home community by ${project.developer} in ${project.municipality}, planned to include ${project.homeTypes.toLowerCase()}.`,
+            description: `${project.name} is a new-home community by ${project.developer} coming this fall to ${project.intersection} in ${project.municipality}, with ${project.homeTypes.toLowerCase()}.`,
           },
           {
             "@type": "City",
@@ -69,6 +69,8 @@ export function buildJsonLd() {
         mentions: [
           { "@type": "Organization", name: project.developer },
           { "@type": "Place", name: "Oakville, Ontario" },
+          { "@type": "Place", name: "Dundas Street West and Neyagawa Boulevard" },
+          { "@type": "Place", name: "Lions Valley Park" },
         ],
         primaryImageOfPage: { "@id": `${origin}/#primaryimage` },
         inLanguage: "en-CA",
@@ -95,7 +97,7 @@ export function buildJsonLd() {
         url: imageUrl,
         contentUrl: imageUrl,
         caption:
-          "Neighbourhood imagery for illustration only. This photograph does not depict the Five Oaks project.",
+          "Aerial of the Lions Valley Park and Sixteen Mile Creek setting around Five Oaks in Oakville.",
         width: images.hero.width,
         height: images.hero.height,
       },

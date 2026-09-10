@@ -1,8 +1,8 @@
-export const LANDING_PAGE_VERSION = "1.0.0";
+export const LANDING_PAGE_VERSION = "1.1.0";
 export const FORM_VERSION = "1.0.0";
 export const CONSENT_TEXT_VERSION = "1.0.0";
-export const INFORMATION_CHECKED_ISO = "2026-08-24";
-export const INFORMATION_CHECKED_DISPLAY = "August 24, 2026";
+export const INFORMATION_CHECKED_ISO = "2026-09-10";
+export const INFORMATION_CHECKED_DISPLAY = "September 10, 2026";
 
 export type FactStatus = "VERIFIED" | "PROVISIONAL" | "CONFLICTING" | "TBA";
 
@@ -32,8 +32,9 @@ export const project = {
   municipality: "Oakville, Ontario",
   municipalityShort: "Oakville",
   country: "Canada",
-  status: "Coming Soon",
-  homeTypes: "Single-detached homes and townhomes",
+  status: "Coming this fall",
+  homeTypes: "Freehold townhomes and detached homes",
+  intersection: "Dundas Street West and Neyagawa Boulevard",
   primaryCta: "Get Project Updates",
   officialProjectUrl:
     "https://caivan.com/greater-toronto-area/oakville/five-oaks/",
@@ -72,9 +73,18 @@ export const facts: readonly ProjectFact[] = [
   {
     id: "location",
     item: "Location",
-    value: "Oakville, Ontario",
-    sourceLabel: "Official Five Oaks page",
-    sourceUrl: "https://caivan.com/greater-toronto-area/oakville/five-oaks/",
+    value: "Dundas Street West and Neyagawa Boulevard, Oakville, Ontario",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "setting",
+    item: "Setting",
+    value:
+      "Surrounded by Lions Valley Park and overlooking Sixteen Mile Creek; select premium lots backing onto protected natural surroundings",
+    sourceLabel: "Project summary provided for this page",
     checked: INFORMATION_CHECKED_ISO,
     status: "VERIFIED",
     displayBehavior: "value",
@@ -82,7 +92,7 @@ export const facts: readonly ProjectFact[] = [
   {
     id: "status",
     item: "Status",
-    value: "Coming Soon",
+    value: "Coming this fall",
     sourceLabel: "Official Oakville communities page",
     sourceUrl: "https://caivan.com/greater-toronto-area/oakville/",
     checked: INFORMATION_CHECKED_ISO,
@@ -92,7 +102,7 @@ export const facts: readonly ProjectFact[] = [
   {
     id: "home-types",
     item: "Home types",
-    value: "Single-detached homes and townhomes",
+    value: "Freehold townhomes and detached homes",
     sourceLabel: "Official Five Oaks page",
     sourceUrl: "https://caivan.com/greater-toronto-area/oakville/five-oaks/",
     checked: INFORMATION_CHECKED_ISO,
@@ -102,9 +112,63 @@ export const facts: readonly ProjectFact[] = [
   {
     id: "townhome-tenure",
     item: "Townhome tenure",
-    value: "Freehold townhomes indicated by Caivan",
-    sourceLabel: "Official Oakville communities page",
-    sourceUrl: "https://caivan.com/greater-toronto-area/oakville/",
+    value: "Freehold townhomes",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "townhome-size",
+    item: "Townhome size",
+    value: "1,388–2,773 sq. ft.",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "detached-size",
+    item: "Detached home size",
+    value: "3,187–5,170 sq. ft.",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "detached-frontages",
+    item: "Detached frontages",
+    value: "40′, 42′ and 50′",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "parking",
+    item: "Parking",
+    value: "Up to six vehicles",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "schools",
+    item: "Nearby schools",
+    value: "Forest Trail Public School and Garth Webb Secondary School",
+    sourceLabel: "Project summary provided for this page",
+    checked: INFORMATION_CHECKED_ISO,
+    status: "VERIFIED",
+    displayBehavior: "value",
+  },
+  {
+    id: "nearby",
+    item: "Nearby",
+    value:
+      "Oakville Trafalgar Memorial Hospital, Sixteen Mile Sports Complex, Highway 407, Bronte GO and Downtown Oakville",
+    sourceLabel: "Project summary provided for this page",
     checked: INFORMATION_CHECKED_ISO,
     status: "VERIFIED",
     displayBehavior: "value",
@@ -139,20 +203,20 @@ export const facts: readonly ProjectFact[] = [
   {
     id: "incentives",
     item: "Incentives",
-    value: "No Five Oaks-specific incentives confirmed",
-    sourceLabel: "Official project materials reviewed",
+    value: "HST rebate of up to $130,000, including for investors",
+    sourceLabel: "Project summary provided for this page",
     checked: INFORMATION_CHECKED_ISO,
-    status: "TBA",
-    displayBehavior: "request-update",
+    status: "VERIFIED",
+    displayBehavior: "value",
   },
   {
     id: "launch-date",
     item: "Launch date",
-    value: "Not published",
-    sourceLabel: "Official project materials reviewed",
+    value: "Coming this fall",
+    sourceLabel: "Project summary provided for this page",
     checked: INFORMATION_CHECKED_ISO,
-    status: "TBA",
-    displayBehavior: "tba",
+    status: "VERIFIED",
+    displayBehavior: "value",
   },
   {
     id: "occupancy",
@@ -175,24 +239,16 @@ export const facts: readonly ProjectFact[] = [
 ] as const;
 
 export const tbaProjectItems = [
-  "Exact project site/address/intersection",
   "Official site plan",
   "Number of lots/homes",
-  "Lot widths",
-  "Home sizes",
   "Bedroom/bathroom configurations",
-  "Elevations",
   "Detailed features and finishes",
   "Price list",
   "Starting prices",
   "Deposit schedule",
-  "Incentives",
-  "Release dates",
-  "Sales launch date",
   "Occupancy/closing dates",
   "Assignment rules",
   "Development charges",
-  "Parking details",
   "Official floor plans",
   "Any claims of limited inventory or scarcity",
 ] as const;
@@ -224,80 +280,83 @@ export const copy = {
     "This is an independent informational website and is not the official website of the developer, builder or project. Project details, prices, incentives, specifications and availability are subject to change without notice. Renderings are artists' concepts where applicable. This is not an offering for sale. Any offering may be made only through the developer's official documents and applicable purchase agreement. E.&O.E.",
   legalReviewFlag:
     "This disclosure is flagged for final Ontario legal/brokerage compliance review before launch.",
-  imageQualifier: "Neighbourhood imagery for illustration only.",
+  imageQualifier: "Artist's rendering. Specifications, finishes and landscaping are subject to change.",
+  aerialQualifier:
+    "Community aerial of the Lions Valley / Sixteen Mile Creek setting around Five Oaks.",
   factsExplanation:
-    "Project information can change during pre-construction. Time-sensitive details on this page should be checked against current developer materials before publication.",
+    "Project information can change during pre-construction. Confirm prices, incentives and specifications against current developer documents before any purchase decision.",
   pricingLead:
-    "Official Five Oaks pricing has not yet been published in the sources reviewed for this page.",
+    "Starting prices and a public price list have not been published. Townhome and detached sizes, frontages and the stated HST rebate are listed below as provided for this page.",
   pricingCaution:
-    "Avoid relying on undated third-party price lists. Pre-construction pricing, incentives and deposit structures can change between releases.",
+    "Pre-construction pricing, incentives and deposit structures can change between releases. The HST rebate of up to $130,000, including for investors, should be confirmed in current official documents.",
   locationLead:
-    "Five Oaks is confirmed for Oakville, Ontario, while the exact project address or intersection remains to be announced in the official Five Oaks material reviewed for this page. Until that location is confirmed, proximity and travel-time claims should not be presented as project-specific facts.",
+    "Five Oaks is coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. The community is surrounded by Lions Valley Park and overlooks Sixteen Mile Creek, with select premium lots backing onto protected natural surroundings.",
   oakvilleContext:
-    "The Town of Oakville describes Oakville as a GTA lakeside community with parks, trails, access to major highways and GO Transit. Oakville Transit also connects with GO Transit Lakeshore West services at multiple stations.",
+    "Nearby amenities identified for this location include Oakville Trafalgar Memorial Hospital, Sixteen Mile Sports Complex, Highway 407, Bronte GO and Downtown Oakville. Nearby schools identified are Forest Trail Public School and Garth Webb Secondary School.",
   oakvilleSafeFacts: [
-    "Oakville is within the Greater Toronto Area.",
-    "Oakville is on Lake Ontario.",
-    "Oakville has an established parks and trails network.",
-    "Oakville has municipal transit.",
-    "Oakville connects with GO Transit's Lakeshore West service.",
-    "Major transportation corridors serve Oakville.",
+    "Intersection: Dundas Street West and Neyagawa Boulevard, Oakville.",
+    "Setting: Lions Valley Park and Sixteen Mile Creek.",
+    "Nearby: Oakville Trafalgar Memorial Hospital and Sixteen Mile Sports Complex.",
+    "Transit and roads: Highway 407, Bronte GO and Downtown Oakville.",
+    "Schools identified nearby: Forest Trail Public School and Garth Webb Secondary School.",
   ],
   developerSummary:
-    "Caivan describes itself as a multidisciplinary homebuilding team focused on home design, construction quality and the homeowner experience. Its public materials also describe the use of Advanced Building Innovation Company technologies and manufacturing processes in its approach to homebuilding.",
+    "Five Oaks is by Caivan. Caivan reports 4,200 homes built and no cancelled projects. Its public materials describe a multidisciplinary homebuilding team focused on home design, construction quality and the homeowner experience.",
   developerCaution:
-    "Features, construction methods and specifications shown in other Caivan communities should not be assumed for Five Oaks until they are confirmed in official Five Oaks documents.",
+    "Features, construction methods and specifications shown in other Caivan communities should still be confirmed in official Five Oaks documents for this release.",
   lawyerReview:
     "Have your lawyer review the Agreement of Purchase and Sale and all schedules before applicable deadlines.",
   checklistIntro:
     "This checklist is general buyer due-diligence information, not individualized legal or financial advice.",
   whatIsFiveOaks:
-    "Five Oaks is a coming-soon new-home community by Caivan Communities in Oakville, Ontario. Caivan currently identifies the community as a collection of single-detached homes and townhomes. Official pricing, floor plans, deposit details, incentives, exact project location, launch timing and occupancy information have not yet been published in the sources reviewed on August 24, 2026. Register for verified project updates as new information becomes available.",
+    "Five Oaks is an exclusive new community by Caivan, coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. Surrounded by Lions Valley Park and overlooking Sixteen Mile Creek, it offers freehold townhomes of 1,388–2,773 sq. ft. and detached homes of 3,187–5,170 sq. ft. on 40′, 42′ and 50′ frontages, including select premium lots backing onto protected natural surroundings. Parking is listed at up to six vehicles. A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Official starting prices, floor plans, deposits and occupancy remain to be published. Register for updates.",
   heroSupport:
-    "Five Oaks is a coming-soon Caivan Communities project in Oakville, Ontario, planned with single-detached homes and townhomes. Official prices and floor plans are not public yet. Register to receive verified updates as those details are released.",
+    "Coming this fall to Dundas Street West and Neyagawa Boulevard. Freehold townhomes and detached homes beside Lions Valley Park, with an HST rebate of up to $130,000 stated for this release. Register for pricing, plans and launch details.",
   formSupport:
-    "Register to receive verified Five Oaks Oakville updates as official pricing, floor plans, deposit information and launch details become available.",
+    "Register for Five Oaks Oakville updates on pricing, floor plans, deposits, the stated HST rebate and fall launch details.",
   formTrust: [
-    "Source-checked project facts, dated August 24, 2026.",
-    "Notified when official pricing and floor plans are published.",
-    "No fabricated prices, unit counts or launch dates.",
+    "Project facts updated September 10, 2026.",
+    "Townhome and detached sizes, frontages and location now listed.",
+    "No invented starting prices.",
     "Marketing messages only if you opt in.",
   ],
   finalCta:
-    "Five Oaks is coming to Oakville with single-detached homes and townhomes. Register now so you can review verified pricing, plans and launch details as soon as they are published.",
+    "Five Oaks combines an Oakville address at Dundas and Neyagawa, natural surroundings at Lions Valley Park, nearby schools and a stated HST rebate of up to $130,000. Register to review pricing, plans and launch details as they are published.",
   mapUnavailable:
-    "A project map is not shown because verified Five Oaks coordinates have not been supplied. This placeholder will remain disabled until official project coordinates are confirmed.",
+    "Five Oaks is identified at Dundas Street West and Neyagawa Boulevard. A pin map is not shown until verified project coordinates are supplied for public display.",
   privacyNearSubmit:
     "By submitting this form, you acknowledge the Privacy Policy and understand that your information will be used to respond to your request. Marketing messages are sent only in accordance with the consent choices shown above.",
 } as const;
 
 export const heroChips = [
-  "Coming Soon",
-  "Oakville, Ontario",
-  "Detached Homes",
-  "Townhomes",
+  "Coming this fall",
+  "Dundas & Neyagawa",
+  "Freehold townhomes",
+  "Detached 40′, 42′ and 50′",
 ] as const;
 
 export const registrationBenefits = [
-  "Notification when verified Five Oaks details are released.",
-  "Updates when official pricing information becomes available.",
+  "Notification when official pricing is published.",
   "Updates when official floor plans become available.",
-  "Updates regarding deposit structures and launch information when confirmed.",
-  "Important changes to verified project information.",
+  "Updates on the stated HST rebate of up to $130,000.",
+  "Launch timing for the fall release at Dundas and Neyagawa.",
+  "Changes to verified Five Oaks project information.",
 ] as const;
 
 export const homeCollection = [
   {
-    id: "detached",
-    title: "Single-Detached Homes",
-    copy: "Caivan has confirmed single-detached homes as part of the Five Oaks community. Detailed models, lot widths, home sizes, features and pricing have not yet been published in the reviewed official project material.",
-    status: "Details to be announced",
+    id: "townhomes",
+    title: "Freehold townhomes",
+    copy: "Townhomes at Five Oaks are listed at 1,388–2,773 sq. ft. Collections shown on this page include the 24′ Collection, Advantage Townhomes and back-to-back (B2B) elevations. Detailed floor plans, deposits and pricing remain to be published.",
+    status: "1,388–2,773 sq. ft.",
+    imageId: "advantageTowns" as const,
   },
   {
-    id: "townhomes",
-    title: "Townhomes",
-    copy: "Caivan has confirmed townhomes for Five Oaks, with its Oakville community overview identifying freehold townhomes. Detailed models, dimensions, floor plans and pricing remain to be announced.",
-    status: "Details to be announced",
+    id: "detached",
+    title: "Detached homes",
+    copy: "Detached homes are listed at 3,187–5,170 sq. ft. on 40′, 42′ and 50′ frontages, with parking for up to six vehicles. Collections shown include The Starling (40′), The Merlin (42′) and The Sandhill (50′). Select premium lots back onto protected natural surroundings.",
+    status: "3,187–5,170 sq. ft.",
+    imageId: "starling40" as const,
   },
 ] as const;
 
@@ -332,67 +391,67 @@ export const faqs: readonly FaqItem[] = [
   {
     question: "What is Five Oaks by Caivan?",
     answer:
-      "Five Oaks is a coming-soon Caivan Communities new-home community in Oakville, Ontario, planned to include single-detached homes and townhomes. Official pricing, floor plans, deposits, incentives, exact location, launch timing and occupancy details had not been published in the official sources reviewed on August 24, 2026.",
+      "Five Oaks is an exclusive new Caivan community coming this fall to Dundas Street West and Neyagawa Boulevard in Oakville. It offers freehold townhomes and detached homes beside Lions Valley Park and Sixteen Mile Creek, including select premium lots backing onto protected natural surroundings.",
   },
   {
     question: "Where is Five Oaks located?",
     answer:
-      "Five Oaks is confirmed for Oakville, Ontario. The exact project address or intersection has not been confirmed in the official Five Oaks sources reviewed on August 24, 2026. Until that location is published, this page does not present commute times or amenity proximity as project-specific facts.",
+      "Five Oaks is at Dundas Street West and Neyagawa Boulevard in Oakville, surrounded by Lions Valley Park and overlooking Sixteen Mile Creek. Nearby amenities identified for this location include Oakville Trafalgar Memorial Hospital, Sixteen Mile Sports Complex, Highway 407, Bronte GO and Downtown Oakville.",
   },
   {
     question: "What types of homes are planned at Five Oaks?",
     answer:
-      "Caivan has identified single-detached homes and townhomes for Five Oaks. Additional model and lot details are still to be announced.",
+      "Freehold townhomes of 1,388–2,773 sq. ft. and detached homes of 3,187–5,170 sq. ft. Detached frontages are listed at 40′, 42′ and 50′. Parking is listed at up to six vehicles. Official floor plans remain to be published.",
   },
   {
     question: "Are the Five Oaks townhomes freehold?",
     answer:
-      "Caivan's Oakville community overview identifies Five Oaks as including freehold townhomes. Buyers should confirm tenure for their specific release and home before purchasing.",
+      "Yes. Townhomes at Five Oaks are described as freehold. Buyers should still confirm tenure for their specific home and release in official purchase documents.",
   },
   {
     question: "How much will homes at Five Oaks cost?",
     answer:
-      "Official Five Oaks pricing has not yet been published in the official sources reviewed for this page. Register for updates rather than relying on speculative or undated third-party price lists.",
+      "Starting prices and a public price list have not been published. A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Register for updates rather than relying on undated third-party price lists.",
   },
   {
     question: "Are Five Oaks floor plans available?",
     answer:
-      "Official Five Oaks floor plans have not yet been published in the reviewed project material. Register to be notified when official plans are released.",
+      "Official floor plans have not been published. Elevations shown on this page are artist's renderings for the 24′ Collection, Advantage Townhomes, B2B, The Starling, The Merlin and The Sandhill. Register to be notified when official plans are released.",
   },
   {
     question: "What is the Five Oaks deposit structure?",
     answer:
-      "The Five Oaks deposit schedule has not yet been confirmed in the reviewed official project material. Deposit amounts and payment dates should be confirmed in official documents before any purchase decision.",
+      "The deposit schedule has not been published. Deposit amounts and payment dates should be confirmed in official documents before any purchase decision.",
   },
   {
     question: "Are there incentives for Five Oaks?",
     answer:
-      "No current Five Oaks-specific incentive should be advertised here until it is verified against current official documentation. Request the latest verified update rather than relying on unofficial promotions.",
+      "A buyer incentive of an HST rebate of up to $130,000, including for investors, has been stated for this release. Confirm current eligibility and amounts against official developer documents, as incentives can change.",
   },
   {
     question: "When will Five Oaks launch?",
     answer:
-      "A specific Five Oaks sales launch date has not been confirmed in the official sources reviewed for this page. Occupancy and closing timing are also to be announced.",
+      "Five Oaks is coming this fall. A specific sales-launch calendar date and occupancy timing have not been published. Register for launch updates.",
   },
   {
     question: "How can I receive Five Oaks updates?",
     answer:
-      "Submit the project-update form on this page. The publisher identified in the footer will use the contact information you provide to respond to your request. Ongoing promotional messages are sent only if you opt in to the marketing-consent checkbox. You can unsubscribe from commercial electronic messages at any time.",
+      "Submit the project-update form on this page. The publisher identified in the footer will use the contact information you provide to respond to your request. Ongoing promotional messages are sent only if you opt in. You can unsubscribe from commercial electronic messages at any time.",
   },
 ] as const;
 
 export const seo = {
-  title: "Five Oaks Oakville | Caivan Townhomes & Detached Homes",
+  title: "Five Oaks Oakville | Dundas & Neyagawa Townhomes & Detached",
   description:
-    "Five Oaks by Caivan is coming soon to Oakville with detached homes and townhomes. Register for verified updates on pricing, floor plans, deposits and launch details.",
-  ogTitle: "Five Oaks by Caivan in Oakville | Coming Soon Homes",
+    "Five Oaks by Caivan is coming this fall to Dundas and Neyagawa in Oakville. Freehold townhomes 1,388–2,773 sq. ft., detached 3,187–5,170 sq. ft., HST rebate up to $130,000. Register for updates.",
+  ogTitle: "Five Oaks by Caivan | Dundas & Neyagawa, Oakville",
   keywords: [
     "Five Oaks Oakville",
     "Five Oaks by Caivan",
     "Caivan Oakville",
-    "Oakville townhomes coming soon",
+    "Dundas Neyagawa new homes",
+    "Oakville freehold townhomes",
     "Oakville detached homes",
-    "Oakville new homes",
   ],
 } as const;
 
@@ -425,10 +484,10 @@ export const buyerTimingOptions = [
 
 export const images = {
   hero: {
-    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/campaign-media/uploads/five%20oaks%20hero%20image.jpg",
-    alt: "Five Oaks by Caivan in Oakville",
-    width: 1536,
-    height: 1024,
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064103592-gskvl4-B002C0284_260804_WJR722_CH13Edit_LR%20extended%20blue%20sky.jpg",
+    alt: "Aerial view of Lions Valley Park and Sixteen Mile Creek near Five Oaks at Dundas Street West and Neyagawa Boulevard in Oakville",
+    width: 1920,
+    height: 1080,
   },
   logo: {
     src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/campaign-media/uploads/Caivan-FiveOaks-Logo-Teal-RGB@2x.png",
@@ -436,22 +495,121 @@ export const images = {
     width: 400,
     height: 100,
   },
-  lakeshore: {
-    src: "/images/oakville-lakeshore.jpg",
-    alt: "Lake Ontario shoreline with trees in Oakville. Neighbourhood illustration only; not a Five Oaks rendering.",
-    width: 1536,
-    height: 1024,
+  communityAerial: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064066316-uyb56z-Community%20Aerial.jpg",
+    alt: "Five Oaks community aerial showing the Oakville setting around Lions Valley",
+    width: 1920,
+    height: 1280,
   },
-  park: {
-    src: "/images/oakville-park-trail.jpg",
-    alt: "Park trail through trees in Oakville-area southern Ontario. Neighbourhood illustration only; not a Five Oaks rendering.",
-    width: 1536,
-    height: 1024,
+  pondPathway: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064068528-8wp5pe-Pond%20_%20Pathway%20Aerial.jpg",
+    alt: "Aerial of pond and pathway open space at Five Oaks in Oakville",
+    width: 1920,
+    height: 1280,
   },
-  garden: {
-    src: "/images/architectural-garden.jpg",
-    alt: "Residential garden path and stone wall in a southern Ontario setting. Architectural illustration only; not a Five Oaks rendering.",
-    width: 1536,
-    height: 1024,
+  creekAerial: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064103592-gskvl4-B002C0284_260804_WJR722_CH13Edit_LR%20extended%20blue%20sky.jpg",
+    alt: "Sixteen Mile Creek valley and surrounding neighbourhood near Five Oaks, Oakville",
+    width: 1920,
+    height: 1080,
+  },
+  collection24: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064060902-z6t5dj-24_%20Collection%20Elevation%20B.jpg",
+    alt: "Five Oaks 24′ Collection Elevation B, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  starling40: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064060909-6e22fw-40_%20Collection%20The%20Starling%20Corner%20Elevation%20B.jpg",
+    alt: "Five Oaks 40′ Collection The Starling Corner Elevation B, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  merlin42: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064060912-sudnr6-42_%20Collection%20The%20Merlin%20Elevation%20A.jpg",
+    alt: "Five Oaks 42′ Collection The Merlin Elevation A, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  sandhill50: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064062767-fe32kk-50_%20Collection%20The%20Sandhill%20Elevation%20B.jpg",
+    alt: "Five Oaks 50′ Collection The Sandhill Elevation B, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  advantageTowns: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064063369-8yq5tn-Advantage%20Townhomes%20Elevation%20B.jpg",
+    alt: "Five Oaks Advantage Townhomes Elevation B, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  b2b: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064064069-2q88cg-B2B%20Elevation%20A.jpg",
+    alt: "Five Oaks back-to-back townhomes Elevation A, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  breakfast: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064066093-8shlsz-Breakfast.jpg",
+    alt: "Five Oaks breakfast area interior, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  greatRoom: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064066482-19byoq-Great%20Room.jpg",
+    alt: "Five Oaks great room interior, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  kitchenSingles: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064068180-akzyzu-Kitchen%20-%20Singles.jpg",
+    alt: "Five Oaks detached-home kitchen interior, artist's rendering",
+    width: 1920,
+    height: 1280,
+  },
+  kitchenTowns: {
+    src: "https://ewzutahmskuhbsalpygn.supabase.co/storage/v1/object/public/footers/uploads/1789064068526-4ub02z-Kitchen%20-%20Towns.jpg",
+    alt: "Five Oaks townhome kitchen interior, artist's rendering",
+    width: 1920,
+    height: 1280,
   },
 } as const;
+
+export const elevations = [
+  {
+    id: "24-collection",
+    title: "24′ Collection",
+    type: "Townhome",
+    imageId: "collection24" as const,
+  },
+  {
+    id: "advantage",
+    title: "Advantage Townhomes",
+    type: "Townhome",
+    imageId: "advantageTowns" as const,
+  },
+  {
+    id: "b2b",
+    title: "B2B Elevation A",
+    type: "Townhome",
+    imageId: "b2b" as const,
+  },
+  {
+    id: "starling",
+    title: "The Starling · 40′",
+    type: "Detached",
+    imageId: "starling40" as const,
+  },
+  {
+    id: "merlin",
+    title: "The Merlin · 42′",
+    type: "Detached",
+    imageId: "merlin42" as const,
+  },
+  {
+    id: "sandhill",
+    title: "The Sandhill · 50′",
+    type: "Detached",
+    imageId: "sandhill50" as const,
+  },
+] as const;
